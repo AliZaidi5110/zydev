@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #f3f6f8;
+  --mist: #e8eef2;
+  --ink: #0e1c2f;
+  --ink-soft: #17314d;
+  --slate: #5b6b7c;
+  --coral: #ff5c35;
+  --coral-dark: #e64a24;
+  --teal: #0e9488;
+  --teal-soft: #5eead4;
+  --teal-deep: #0f766e;
+  --background: var(--canvas);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-slate: var(--slate);
+  --color-coral: var(--coral);
+  --color-coral-dark: var(--coral-dark);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-teal-deep: var(--teal-deep);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --shadow-soft: 0 10px 30px -18px rgba(14, 28, 47, 0.28);
+  --shadow-lift: 0 22px 45px -24px rgba(14, 28, 47, 0.35);
+  --shadow-cta: 0 12px 24px -12px rgba(255, 92, 53, 0.55);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(255, 92, 53, 0.08), transparent 55%),
+      radial-gradient(900px 500px at -10% 20%, rgba(14, 148, 136, 0.08), transparent 50%),
+      var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: rgba(255, 92, 53, 0.2);
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@layer components {
+  .field-input {
+    @apply w-full rounded-md border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition placeholder:text-slate/60 focus:border-coral focus:ring-2 focus:ring-coral/20;
+  }
+
+  .prose-zydev {
+    @apply max-w-none text-slate leading-relaxed;
+  }
+
+  .prose-zydev h2 {
+    @apply mt-10 mb-4 font-display text-2xl font-semibold tracking-tight text-ink;
+  }
+
+  .prose-zydev h3 {
+    @apply mt-8 mb-3 font-display text-xl font-semibold text-ink;
+  }
+
+  .prose-zydev p {
+    @apply mb-4;
+  }
+
+  .prose-zydev ul,
+  .prose-zydev ol {
+    @apply mb-4 ml-5 space-y-2;
+  }
+
+  .prose-zydev ul {
+    @apply list-disc;
+  }
+
+  .prose-zydev ol {
+    @apply list-decimal;
+  }
+
+  .prose-zydev a {
+    @apply font-semibold text-coral underline;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(14, 28, 47, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 28, 47, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
