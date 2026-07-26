@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { FadeIn } from "@/components/motion/FadeIn";
@@ -56,23 +57,45 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               <li className="font-medium text-ink">{service.shortTitle}</li>
             </ol>
           </nav>
-          <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-              {siteConfig.name} services
-            </p>
-            <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-              {service.title}
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
-              {service.intro}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#quote">{siteConfig.cta.primary}</Button>
-              <Button href="/pricing" variant="secondary">
-                View pricing
-              </Button>
-            </div>
-          </FadeIn>
+          <div
+            className={
+              service.image
+                ? "grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]"
+                : undefined
+            }
+          >
+            <FadeIn>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+                {siteConfig.name} services
+              </p>
+              <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+                {service.title}
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
+                {service.intro}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href="#quote">{siteConfig.cta.primary}</Button>
+                <Button href="/pricing" variant="secondary">
+                  View pricing
+                </Button>
+              </div>
+            </FadeIn>
+            {service.image ? (
+              <FadeIn delay={0.1} className="relative">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist shadow-lift sm:aspect-[16/11]">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt ?? service.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </FadeIn>
+            ) : null}
+          </div>
         </Container>
       </section>
 

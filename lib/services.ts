@@ -10,6 +10,8 @@ export type Service = {
   intro: string;
   summary: string;
   icon: "globe" | "search" | "map" | "card" | "share";
+  image?: string;
+  imageAlt?: string;
   benefits: { title: string; description: string }[];
   process: { step: string; title: string; description: string }[];
   pricingSnapshot: { name: string; price: string; note: string }[];
@@ -31,6 +33,9 @@ export const services: Service[] = [
     summary:
       "Modern, mobile-first websites engineered for speed, SEO, and conversions.",
     icon: "globe",
+    image: "/images/website-design.jpg",
+    imageAlt:
+      "Hands typing on a laptop while building a modern website",
     benefits: [
       {
         title: "Conversion-led design",
@@ -142,6 +147,9 @@ export const services: Service[] = [
       "Zydev’s SEO services UK businesses choose when they want growth they can measure. We fix the technical foundations, target the right keywords, and build content that attracts buyers — not vanity traffic.",
     summary: "Rank higher for the searches that actually drive revenue.",
     icon: "search",
+    image: "/images/seo-services.jpg",
+    imageAlt:
+      "Laptop showing a website analytics dashboard used for SEO performance tracking",
     benefits: [
       {
         title: "Technical SEO audits",
@@ -244,6 +252,9 @@ export const services: Service[] = [
       "Google My Business optimisation is one of the fastest ways for local UK businesses to get found. Zydev optimises your Google Business Profile so you show up in Maps and the local pack when nearby customers are ready to buy.",
     summary: "Dominate local search and turn map views into real enquiries.",
     icon: "map",
+    image: "/images/google-my-business.jpg",
+    imageAlt:
+      "Local business interior representing Google Business Profile and local discovery",
     benefits: [
       {
         title: "Profile completeness",
@@ -346,6 +357,9 @@ export const services: Service[] = [
       "Need reliable card payment integration UK customers trust at checkout? Zydev connects Stripe, PayPal, and other gateways to your site with secure flows, clear UX, and fewer abandoned carts.",
     summary: "Secure checkout experiences that customers finish — and trust.",
     icon: "card",
+    image: "/images/card-payments.jpg",
+    imageAlt:
+      "Person entering card details on a laptop to complete a secure online payment",
     benefits: [
       {
         title: "Gateway setup",
@@ -448,6 +462,9 @@ export const services: Service[] = [
       "Zydev provides social media management UK businesses use to stay consistent without hiring a full in-house team. We plan, create, and publish content that builds trust and supports SEO and paid campaigns.",
     summary: "Consistent content and community care that supports growth.",
     icon: "share",
+    image: "/images/social-media.jpg",
+    imageAlt:
+      "Smartphone home screen showing social media apps used for marketing",
     benefits: [
       {
         title: "Content calendars",

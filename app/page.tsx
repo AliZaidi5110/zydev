@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { FaqSchema } from "@/components/seo/JsonLd";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { DesignShowcase } from "@/components/sections/DesignShowcase";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -11,7 +13,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
-import { services } from "@/lib/services";
+import { getService, services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -63,12 +65,15 @@ const trustPoints = [
 
 export default function HomePage() {
   const featured = getFeaturedCaseStudies(3);
+  const websiteDesign = getService("website-design");
 
   return (
     <>
       <FaqSchema faqs={homeFaqs} />
 
       <HomeHero />
+
+      <DesignShowcase />
 
       <section className="py-16 sm:py-20">
         <Container>
@@ -77,6 +82,43 @@ export default function HomePage() {
             title="Five ways we help you grow"
             description="Pick one service or combine them into a joined-up digital programme."
           />
+
+          {websiteDesign?.image ? (
+            <FadeIn className="mt-10">
+              <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-mist shadow-lift">
+                  <Image
+                    src={websiteDesign.image}
+                    alt={
+                      websiteDesign.imageAlt ??
+                      "Website design shown on a laptop in a real workspace"
+                    }
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+                    Featured service
+                  </p>
+                  <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
+                    {websiteDesign.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-relaxed text-slate">
+                    {websiteDesign.summary} Clean layouts, clear journeys, and
+                    experiences that make people&apos;s lives simpler online.
+                  </p>
+                  <div className="mt-6">
+                    <Button href={`/services/${websiteDesign.slug}`}>
+                      Explore website design
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          ) : null}
+
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <FadeIn key={service.slug} delay={index * 0.04}>
