@@ -7,10 +7,10 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-ink/8 bg-white/80 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-coral/30 hover:shadow-lift"
+      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-ink/10 bg-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:border-coral/35 hover:shadow-lift"
     >
       {service.image ? (
-        <div className="relative aspect-[16/10] overflow-hidden bg-mist">
+        <div className="relative aspect-[16/9] overflow-hidden bg-mist">
           <Image
             src={service.image}
             alt={service.imageAlt ?? service.title}
@@ -21,17 +21,17 @@ export function ServiceCard({ service }: { service: Service }) {
         </div>
       ) : null}
 
-      <div className="flex flex-1 flex-col p-6">
-        <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-mist text-teal transition group-hover:bg-coral/10 group-hover:text-coral">
-          <ServiceIcon icon={service.icon} />
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-mist text-teal transition group-hover:bg-coral/10 group-hover:text-coral">
+          <ServiceIcon icon={service.icon} className="h-5 w-5" />
         </div>
-        <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
+        <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
           {service.shortTitle}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-slate">
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate">
           {service.summary}
         </p>
-        <span className="mt-5 text-sm font-semibold text-coral transition group-hover:translate-x-1">
+        <span className="mt-4 text-sm font-semibold text-coral transition group-hover:translate-x-0.5">
           Explore service →
         </span>
       </div>

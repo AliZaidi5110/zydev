@@ -8,30 +8,34 @@ type CtaBannerProps = {
 };
 
 export function CtaBanner({
-  title = "Ready to grow with a clearer digital partner?",
-  description = "Tell us what you need. We’ll reply with practical next steps — no hard sell.",
+  title = "Ready for a sharper digital presence?",
+  description = "Tell us your goals. We’ll reply within one business day with clear next steps.",
 }: CtaBannerProps) {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-mist/80 py-10 sm:py-12">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-ink via-ink-soft to-teal-deep px-6 py-12 text-white sm:px-12 sm:py-14">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-ink via-ink-soft to-teal-deep px-5 py-8 text-white sm:px-10 sm:py-10">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-coral/30 blur-3xl"
+            className="pointer-events-none absolute -right-10 top-0 h-36 w-36 rounded-full bg-coral/25 blur-3xl"
           />
-          <div className="relative max-w-2xl">
-            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              {title}
-            </h2>
-            <p className="mt-4 text-base text-white/70 sm:text-lg">
-              {description}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/contact">{siteConfig.cta.primary}</Button>
+          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-xl">
+              <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                {title}
+              </h2>
+              <p className="mt-2 text-sm text-white/70 sm:text-base">
+                {description}
+              </p>
+            </div>
+            <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
+              <Button href="/contact" className="w-full sm:w-auto">
+                {siteConfig.cta.primary}
+              </Button>
               <Button
                 href="/contact"
                 variant="secondary"
-                className="!border-white/20 !bg-white/10 !text-white hover:!bg-white/15"
+                className="w-full !border-white/20 !bg-white/10 !text-white hover:!bg-white/15 sm:w-auto"
               >
                 {siteConfig.cta.secondary}
               </Button>

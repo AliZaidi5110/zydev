@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "Zydev Ltd",
   tagline: "Digital growth for UK businesses",
   description:
-    "Zydev is a UK digital services agency offering website design & development, SEO, Google My Business optimisation, card payment integration, and social media management.",
+    "Zydev is a UK digital services agency offering website design & development, SEO, Google My Business optimisation, card payment integration, social media management, and business funding support.",
   url: "https://www.zydev.co.uk",
   locale: "en_GB",
   phone: "+44 20 0000 0000",
@@ -64,6 +64,11 @@ export const mainNav: NavItem[] = [
         href: "/services/social-media-marketing",
         description: "Consistent content that builds trust and leads.",
       },
+      {
+        label: "Business Funding",
+        href: "/services/business-funding",
+        description: "Funding readiness and application support for growth.",
+      },
     ],
   },
   { label: "Pricing", href: "/pricing" },
@@ -79,6 +84,7 @@ export const footerNav = {
     { label: "Google My Business", href: "/services/google-my-business" },
     { label: "Card Payments", href: "/services/card-payments" },
     { label: "Social Media", href: "/services/social-media-marketing" },
+    { label: "Business Funding", href: "/services/business-funding" },
   ],
   company: [
     { label: "About", href: "/about" },

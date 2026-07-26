@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Pricing",
   description:
-    "Transparent Zydev pricing starting points for website design, SEO, Google Business, card payments, and social media management.",
+    "Transparent Zydev pricing starting points for website design, SEO, Google Business, card payments, social media, and business funding.",
   path: "/pricing",
 });
 

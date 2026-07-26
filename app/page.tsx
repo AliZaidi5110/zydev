@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { FaqSchema } from "@/components/seo/JsonLd";
@@ -13,59 +12,59 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
-import { getService, services } from "@/lib/services";
+import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} | Website Design, SEO & Digital Services UK`,
-  description: siteConfig.description,
+  description:
+    "Zydev helps UK businesses grow with website design & development, SEO, Google Business Profile optimisation, card payments, social media management, and business funding support. Get a free quote today.",
   path: "/",
 });
 
 const homeFaqs = [
   {
-    question: "What does Zydev specialise in?",
+    question: "What digital services does Zydev offer in the UK?",
     answer:
-      "We help UK businesses with website design & development, SEO, Google Business Profile optimisation, card payment integration, and social media management.",
+      "Zydev provides website design & development, SEO services, Google Business Profile optimisation, card payment integration, social media management, and business funding support for UK businesses.",
   },
   {
     question: "Do you work with businesses outside London?",
     answer:
-      "Yes. We’re UK-wide. Most projects run remotely with clear communication, milestones, and video calls.",
+      "Yes. We work UK-wide. Most projects run remotely with clear milestones, shared updates, and video calls.",
   },
   {
-    question: "How quickly can we get started?",
+    question: "How quickly can a website or SEO project start?",
     answer:
       "Discovery calls are usually available within a few working days. Many website projects kick off within one to two weeks of agreement.",
   },
   {
-    question: "Is the consultation really free?",
+    question: "Is the consultation free?",
     answer:
-      "Yes. Book a free consultation and we’ll discuss goals, constraints, and a practical path forward — with no obligation.",
+      "Yes. Book a free consultation and we’ll discuss goals, scope, and a practical path forward — with no obligation.",
   },
 ];
 
 const trustPoints = [
   {
-    title: "SEO built in, not bolted on",
+    title: "SEO built into every build",
     description:
-      "Metadata, schema, performance, and internal linking are part of the build — not a later afterthought.",
+      "Metadata, schema, performance, and internal linking ship with the site — not as an afterthought.",
   },
   {
-    title: "Commercial clarity",
+    title: "Outcomes over vanity metrics",
     description:
-      "We prioritise enquiries, bookings, and revenue signals over vanity metrics.",
+      "We prioritise enquiries, bookings, and revenue signals you can measure.",
   },
   {
-    title: "Modern delivery",
+    title: "Mobile-first delivery",
     description:
-      "Next.js, accessible UX, and content systems your team can actually maintain.",
+      "Fast, accessible experiences that work on phones first — where most UK traffic starts.",
   },
 ];
 
 export default function HomePage() {
   const featured = getFeaturedCaseStudies(3);
-  const websiteDesign = getService("website-design");
 
   return (
     <>
@@ -75,53 +74,22 @@ export default function HomePage() {
 
       <DesignShowcase />
 
-      <section className="py-16 sm:py-20">
+      <section
+        id="services"
+        aria-labelledby="services-heading"
+        className="border-y border-ink/8 bg-white py-10 sm:py-12"
+      >
         <Container>
           <SectionHeading
-            eyebrow="Services"
-            title="Five ways we help you grow"
-            description="Pick one service or combine them into a joined-up digital programme."
+            id="services-heading"
+            eyebrow="Digital services"
+            title="Website design, SEO, funding and growth services"
+            description="Choose one capability or combine them into a joined-up programme for UK businesses."
           />
 
-          {websiteDesign?.image ? (
-            <FadeIn className="mt-10">
-              <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-                <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-mist shadow-lift">
-                  <Image
-                    src={websiteDesign.image}
-                    alt={
-                      websiteDesign.imageAlt ??
-                      "Website design shown on a laptop in a real workspace"
-                    }
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-                    Featured service
-                  </p>
-                  <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
-                    {websiteDesign.title}
-                  </h3>
-                  <p className="mt-4 text-base leading-relaxed text-slate">
-                    {websiteDesign.summary} Clean layouts, clear journeys, and
-                    experiences that make people&apos;s lives simpler online.
-                  </p>
-                  <div className="mt-6">
-                    <Button href={`/services/${websiteDesign.slug}`}>
-                      Explore website design
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ) : null}
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <FadeIn key={service.slug} delay={index * 0.04}>
+              <FadeIn key={service.slug} delay={index * 0.03}>
                 <ServiceCard service={service} />
               </FadeIn>
             ))}
@@ -129,21 +97,25 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-mist/60 py-16 sm:py-20">
+      <section
+        aria-labelledby="why-zydev-heading"
+        className="bg-mist py-10 sm:py-12"
+      >
         <Container>
           <SectionHeading
+            id="why-zydev-heading"
             eyebrow="Why Zydev"
-            title="A digital partner that ships with SEO in mind"
+            title="A digital partner built for search and sales"
             description="We design for people and structure for search engines — so your investment keeps working after launch."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:mt-7 md:grid-cols-3">
             {trustPoints.map((point, index) => (
-              <FadeIn key={point.title} delay={index * 0.05}>
-                <article className="h-full rounded-2xl bg-white p-6 shadow-soft">
-                  <h3 className="font-display text-xl font-semibold text-ink">
+              <FadeIn key={point.title} delay={index * 0.04}>
+                <article className="h-full border-l-2 border-coral bg-white px-4 py-4 sm:px-5">
+                  <h3 className="font-display text-base font-semibold text-ink sm:text-lg">
                     {point.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate">
+                  <p className="mt-2 text-sm leading-relaxed text-slate">
                     {point.description}
                   </p>
                 </article>
@@ -153,49 +125,57 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="bg-white py-10 sm:py-12">
         <Container>
           <TestimonialCarousel />
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section
+        aria-labelledby="case-studies-heading"
+        className="border-t border-ink/8 bg-mist/70 py-10 sm:py-12"
+      >
         <Container>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
+              id="case-studies-heading"
               eyebrow="Case studies"
-              title="Results our clients can point to"
-              description="A sample of website, SEO, payments, and social work across UK industries."
+              title="Results UK clients can point to"
+              description="Website, SEO, payments, and social projects across healthcare, retail, and creative services."
             />
-            <Button href="/case-studies" variant="secondary">
+            <Button
+              href="/case-studies"
+              variant="secondary"
+              className="w-full shrink-0 sm:w-auto"
+            >
               View all case studies
             </Button>
           </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:mt-7 lg:grid-cols-3">
             {featured.map((study, index) => (
-              <FadeIn key={study.slug} delay={index * 0.05}>
+              <FadeIn key={study.slug} delay={index * 0.04}>
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/8 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lift"
+                  className="group flex h-full flex-col overflow-hidden rounded-xl border border-ink/10 bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift"
                 >
                   <div
-                    className={`min-h-36 bg-gradient-to-br ${study.coverGradient} p-5 text-white`}
+                    className={`min-h-28 bg-gradient-to-br ${study.coverGradient} p-4 text-white`}
                   >
-                    <p className="text-xs uppercase tracking-[0.16em] text-white/70">
+                    <p className="text-[11px] uppercase tracking-[0.14em] text-white/70">
                       {study.industry}
                     </p>
-                    <p className="mt-8 font-display text-2xl font-semibold">
+                    <p className="mt-5 font-display text-xl font-semibold">
                       {study.client}
                     </p>
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-display text-lg font-semibold text-ink group-hover:text-coral">
+                  <div className="flex flex-1 flex-col p-4">
+                    <h3 className="font-display text-base font-semibold text-ink group-hover:text-coral">
                       {study.title}
                     </h3>
                     <p className="mt-2 flex-1 text-sm text-slate">
                       {study.summary}
                     </p>
-                    <span className="mt-4 text-sm font-semibold text-coral">
+                    <span className="mt-3 text-sm font-semibold text-coral">
                       Read case study →
                     </span>
                   </div>
@@ -206,14 +186,18 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-mist/60 py-16 sm:py-20">
+      <section
+        aria-labelledby="faq-heading"
+        className="bg-white py-10 sm:py-12"
+      >
         <Container className="max-w-3xl">
           <SectionHeading
+            id="faq-heading"
             eyebrow="FAQ"
-            title="Questions before you enquire"
+            title="Common questions about working with Zydev"
             align="center"
           />
-          <div className="mt-10">
+          <div className="mt-6 sm:mt-7">
             <FaqAccordion faqs={homeFaqs} />
           </div>
         </Container>

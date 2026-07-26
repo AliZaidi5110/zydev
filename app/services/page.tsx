@@ -9,7 +9,7 @@ import { services } from "@/lib/services";
 export const metadata = buildMetadata({
   title: "Digital Services for UK Businesses",
   description:
-    "Explore Zydev services: website design & development, SEO, Google My Business optimisation, card payments, and social media management.",
+    "Explore Zydev services: website design & development, SEO, Google My Business optimisation, card payments, social media management, and business funding support.",
   path: "/services",
 });
 

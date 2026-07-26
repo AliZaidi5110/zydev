@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "About Zydev",
   description:
-    "Meet Zydev — a UK digital services agency helping businesses grow with website design, SEO, Google Business, payments, and social media.",
+    "Meet Zydev — a UK digital services agency helping businesses grow with website design, SEO, Google Business, payments, social media, and business funding support.",
   path: "/about",
 });
 

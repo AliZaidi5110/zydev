@@ -8,6 +8,8 @@ const paths: Record<Service["icon"], string> = {
   card: "M2 7h20v10H2V7Zm0 3h20M6 15h4",
   share:
     "M18 8a3 3 0 1 0-2.8-4M8.8 10.2a3 3 0 1 0 0 3.6M15.2 18.2A3 3 0 1 0 18 16m-2.8-8-6.4 3.2m6.4 5.6-6.4-3.2",
+  funding:
+    "M12 3v18M17 8c0-1.7-2.2-3-5-3S7 6.3 7 8s2.2 3 5 3 5 1.3 5 3-2.2 3-5 3-5-1.3-5-3",
 };
 
 export function ServiceIcon({

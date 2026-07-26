@@ -41,10 +41,7 @@
   }
 
   body {
-    background:
-      radial-gradient(1200px 600px at 90% -10%, rgba(255, 92, 53, 0.08), transparent 55%),
-      radial-gradient(900px 500px at -10% 20%, rgba(14, 148, 136, 0.08), transparent 50%),
-      var(--canvas);
+    background: var(--mist);
     color: var(--ink);
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }

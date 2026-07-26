@@ -9,7 +9,7 @@ export type Service = {
   metaDescription: string;
   intro: string;
   summary: string;
-  icon: "globe" | "search" | "map" | "card" | "share";
+  icon: "globe" | "search" | "map" | "card" | "share" | "funding";
   image?: string;
   imageAlt?: string;
   benefits: { title: string; description: string }[];
@@ -554,6 +554,121 @@ export const services: Service[] = [
       },
     ],
     relatedSlugs: ["seo-services", "website-design", "google-my-business"],
+  },
+  {
+    slug: "business-funding",
+    title: "Business Funding",
+    shortTitle: "Business Funding",
+    primaryKeyword: "business funding UK",
+    metaTitle: "Business Funding Support UK | Zydev",
+    metaDescription:
+      "Business funding support for UK SMEs — guidance on finance options, readiness checks, and applications so you can fund growth with confidence.",
+    intro:
+      "Looking for business funding UK companies can actually access? Zydev helps you prepare, present, and pursue the right finance options — so growth plans are backed by capital, not guesswork.",
+    summary:
+      "Funding readiness and application support that helps UK businesses unlock capital.",
+    icon: "funding",
+    image: "/images/business-funding.jpg",
+    imageAlt:
+      "Business finance documents and calculator representing UK business funding support",
+    benefits: [
+      {
+        title: "Funding readiness review",
+        description:
+          "We assess cash flow, documents, and positioning before you approach lenders or investors.",
+      },
+      {
+        title: "Option matching",
+        description:
+          "Clear guidance on grants, loans, asset finance, and other routes suited to your goals.",
+      },
+      {
+        title: "Application support",
+        description:
+          "Help preparing packs, forecasts, and narratives that make your case easier to approve.",
+      },
+      {
+        title: "Growth-aligned plans",
+        description:
+          "Funding requests tied to real commercial outcomes — websites, marketing, equipment, or expansion.",
+      },
+      {
+        title: "Digital credibility",
+        description:
+          "Pair funding with a stronger web and SEO presence so lenders and partners see a serious business.",
+      },
+      {
+        title: "Ongoing advice",
+        description:
+          "Practical next steps after submission, including follow-ups and alternative routes if needed.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Discover",
+        description:
+          "Understand funding needs, timelines, and what capital will unlock.",
+      },
+      {
+        step: "02",
+        title: "Prepare",
+        description:
+          "Organise financials, forecasts, and business narrative for review.",
+      },
+      {
+        step: "03",
+        title: "Apply",
+        description:
+          "Support applications to suitable funding routes with clear documentation.",
+      },
+      {
+        step: "04",
+        title: "Progress",
+        description:
+          "Track outcomes and refine your plan for the next growth stage.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "Readiness",
+        price: "from £495",
+        note: "Assessment & recommendations",
+      },
+      {
+        name: "Application",
+        price: "from £995",
+        note: "Pack prep + submission support",
+      },
+      {
+        name: "Growth retainers",
+        price: "Custom",
+        note: "Funding + digital growth bundle",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide the funding yourselves?",
+        answer:
+          "We guide and support your applications. Finance is arranged through appropriate third-party lenders, schemes, or partners — not as Zydev capital.",
+      },
+      {
+        question: "What types of funding can you help with?",
+        answer:
+          "Depending on eligibility, we can support routes such as business loans, grants, asset finance, and other SME-friendly options available in the UK.",
+      },
+      {
+        question: "Can funding be combined with website or SEO work?",
+        answer:
+          "Yes. Many clients fund growth programmes that include website upgrades, SEO, or marketing — and we can scope those alongside funding support.",
+      },
+      {
+        question: "Is approval guaranteed?",
+        answer:
+          "No. Approval depends on the funder’s criteria and your business profile. We focus on preparation and presentation to improve your chances.",
+      },
+    ],
+    relatedSlugs: ["website-design", "seo-services", "card-payments"],
   },
 ];
 

@@ -38,7 +38,7 @@ export function TestimonialCarousel() {
   const active = testimonials[index];
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-white sm:px-10 sm:py-12">
+    <div className="relative overflow-hidden rounded-2xl bg-ink px-5 py-7 text-white sm:px-8 sm:py-9">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-coral/25 blur-3xl"
@@ -48,11 +48,11 @@ export function TestimonialCarousel() {
         className="pointer-events-none absolute -bottom-20 left-10 h-48 w-48 rounded-full bg-teal/20 blur-3xl"
       />
 
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-soft">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-soft">
         Client stories
       </p>
 
-      <div className="relative mt-6 min-h-[160px]">
+      <div className="relative mt-4 min-h-[120px] sm:min-h-[140px]">
         <AnimatePresence mode="wait">
           <motion.blockquote
             key={active.name}
@@ -62,10 +62,10 @@ export function TestimonialCarousel() {
             transition={{ duration: 0.35 }}
             className="max-w-3xl"
           >
-            <p className="font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
+            <p className="font-display text-xl font-medium leading-snug tracking-tight sm:text-2xl">
               “{active.quote}”
             </p>
-            <footer className="mt-6 text-sm text-white/70">
+            <footer className="mt-4 text-sm text-white/70">
               <cite className="not-italic">
                 <span className="font-semibold text-white">{active.name}</span>
                 <span className="mx-2 text-white/40">·</span>
@@ -76,7 +76,7 @@ export function TestimonialCarousel() {
         </AnimatePresence>
       </div>
 
-      <div className="mt-8 flex items-center gap-2" role="tablist" aria-label="Testimonials">
+      <div className="mt-5 flex items-center gap-2" role="tablist" aria-label="Testimonials">
         {testimonials.map((item, i) => (
           <button
             key={item.name}

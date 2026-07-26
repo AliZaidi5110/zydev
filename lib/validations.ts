@@ -18,5 +18,6 @@ export const serviceOptions = [
   "Google My Business",
   "Card Payment Integration",
   "Social Media Management",
+  "Business Funding",
   "Not sure yet",
 ] as const;

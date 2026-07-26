@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     "Google My Business optimisation",
     "card payment integration",
     "social media management",
+    "business funding UK",
     "Zydev",
   ],
 };
