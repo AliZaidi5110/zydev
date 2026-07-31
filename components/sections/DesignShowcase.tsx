@@ -1,15 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
 
 export function DesignShowcase() {
   const reduceMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center center"],
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], [-220, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [0, 1]);
 
   return (
-    <section className="relative overflow-hidden bg-ink">
+    <section ref={sectionRef} className="relative overflow-hidden bg-ink">
       <div className="grid items-center lg:grid-cols-2">
         <div className="relative order-2 flex min-h-[320px] items-center justify-center overflow-hidden bg-gradient-to-br from-ink via-ink-soft to-black px-6 py-12 sm:min-h-[380px] lg:order-1 lg:min-h-[460px]">
           <div
@@ -18,15 +33,14 @@ export function DesignShowcase() {
           />
           <motion.div
             className="relative w-full max-w-[420px] sm:max-w-[480px]"
-            initial={
-              reduceMotion ? false : { opacity: 0, y: -120, scale: 0.92 }
+            style={
+              reduceMotion
+                ? undefined
+                : {
+                    x,
+                    opacity,
+                  }
             }
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{
-              duration: 0.9,
-              ease: [0.16, 1, 0.3, 1],
-            }}
           >
             <div
               aria-hidden
