@@ -4,15 +4,14 @@ import { FaqSchema } from "@/components/seo/JsonLd";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { DesignShowcase } from "@/components/sections/DesignShowcase";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { ServicesShowcase } from "@/components/sections/ServicesShowcase";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ServiceCard } from "@/components/ui/ServiceCard";
 import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
-import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -74,28 +73,7 @@ export default function HomePage() {
 
       <DesignShowcase />
 
-      <section
-        id="services"
-        aria-labelledby="services-heading"
-        className="border-y border-ink/8 bg-white py-10 sm:py-12"
-      >
-        <Container>
-          <SectionHeading
-            id="services-heading"
-            eyebrow="Digital services"
-            title="Website design, SEO, funding and growth services"
-            description="Choose one capability or combine them into a joined-up programme for UK businesses."
-          />
-
-          <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <FadeIn key={service.slug} delay={index * 0.03}>
-                <ServiceCard service={service} />
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ServicesShowcase />
 
       <section
         aria-labelledby="why-zydev-heading"

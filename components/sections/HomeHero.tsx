@@ -1,88 +1,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { Button } from "@/components/ui/Button";
+import { RotatingStudioBadge } from "@/components/sections/RotatingStudioBadge";
 import { siteConfig } from "@/lib/site";
-
-const keywordLinks = [
-  { label: "Website Design", href: "/services/website-design" },
-  { label: "SEO", href: "/services/seo-services" },
-  { label: "Google Business", href: "/services/google-my-business" },
-  { label: "Payments", href: "/services/card-payments" },
-  { label: "Social Media", href: "/services/social-media-marketing" },
-  { label: "Business Funding", href: "/services/business-funding" },
-];
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-[88dvh] overflow-hidden bg-[#2aa3a7] sm:min-h-dvh">
+    <section className="relative min-h-dvh overflow-hidden bg-black text-white">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-architecture.jpg"
-          alt="Modern architecture representing Zydev website design and digital services for UK businesses"
+          src="/images/hero-studio-bg.jpg"
+          alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_30%] sm:object-[68%_35%]"
+          className="object-cover object-center"
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-[#2aa3a7]/45 mix-blend-color"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(105deg,rgba(14,40,48,0.78)_0%,rgba(42,163,167,0.72)_38%,rgba(42,163,167,0.28)_65%,transparent_100%)]"
+          className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70"
         />
       </div>
 
-      <div className="relative z-10 flex min-h-[88dvh] items-end px-5 pb-10 pt-24 sm:min-h-dvh sm:items-center sm:px-8 sm:pb-16 sm:pt-28 lg:px-14 xl:px-20">
-        <FadeIn className="w-full max-w-2xl">
-          <p className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Zydev
-          </p>
-          <h1 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-            Website design, SEO & digital growth for UK businesses.
+      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl flex-col px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-32 lg:px-12">
+        <FadeIn className="flex flex-1 flex-col justify-center">
+          <h1 className="hero-studio-title font-display text-[clamp(2.6rem,9.5vw,7.5rem)] font-bold uppercase leading-none tracking-[-0.04em] whitespace-nowrap">
+            Zydev.Studio
           </h1>
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/90 sm:mt-4 sm:text-base">
-            We build fast sites, improve local visibility, and set up payments
-            and social — so your brand looks sharp and converts.
-          </p>
-          <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row sm:flex-wrap">
-            <Button
-              href="/contact"
-              className="w-full !bg-white !text-ink shadow-lg hover:!bg-white/90 sm:w-auto"
-            >
-              {siteConfig.cta.primary}
-            </Button>
-            <Button
-              href="/contact"
-              variant="secondary"
-              className="w-full !border-white/45 !bg-white/10 !text-white backdrop-blur-sm hover:!bg-white/20 sm:w-auto"
-            >
-              {siteConfig.cta.secondary}
-            </Button>
-          </div>
-          <nav
-            aria-label="Popular services"
-            className="mt-7 flex flex-wrap gap-x-1 gap-y-2 text-xs font-medium text-white/85 sm:mt-8 sm:text-sm"
-          >
-            {keywordLinks.map((link, index) => (
-              <span key={link.href} className="inline-flex items-center">
-                {index > 0 ? (
-                  <span aria-hidden className="mx-2 text-white/40">
-                    |
-                  </span>
-                ) : null}
-                <Link
-                  href={link.href}
-                  className="underline-offset-4 transition hover:text-white hover:underline"
-                >
-                  {link.label}
-                </Link>
-              </span>
-            ))}
-          </nav>
         </FadeIn>
+
+        <div className="mt-8 grid items-end gap-8 sm:mt-10 lg:grid-cols-[1fr_auto] lg:gap-12">
+          <FadeIn delay={0.12} className="max-w-md">
+            <p className="text-sm leading-relaxed text-white/80 sm:text-base">
+              {siteConfig.name} is a UK digital studio creating websites, SEO,
+              local visibility, payments, social, and funding support —
+              beautiful experiences that help businesses grow.
+            </p>
+            <Link
+              href="/case-studies"
+              className="mt-5 inline-flex items-center gap-3 rounded-full border border-white/35 bg-black/25 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-ink"
+            >
+              <span>View our works</span>
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-ink">
+                <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden>
+                  <path
+                    d="M11.48 0L12.438 0.991L12.33 1.099C9.558 4.012 9.661 7.978 11.492 9.871L10.52 10.856C9.012 9.296 8.474 6.874 9.015 4.462L0.955 12.637L0 11.648L8.061 3.469C5.699 4.002 3.337 3.43 1.827 1.868L2.799 0.882C4.654 2.8 8.599 2.923 11.48 0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="justify-self-end">
+            <RotatingStudioBadge href="#services" />
+          </FadeIn>
+        </div>
       </div>
     </section>
   );
