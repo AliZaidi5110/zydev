@@ -18,13 +18,16 @@ export function CookieConsent() {
     }
   }, []);
 
-  function accept() {
+  function store(value: "accepted" | "essential") {
     try {
-      window.localStorage.setItem(STORAGE_KEY, "accepted");
+      window.localStorage.setItem(STORAGE_KEY, value);
     } catch {
       // ignore storage failures
     }
     setVisible(false);
+    window.dispatchEvent(
+      new CustomEvent("zydev-consent", { detail: { value } }),
+    );
   }
 
   if (!visible) return null;
@@ -44,14 +47,14 @@ export function CookieConsent() {
         for details.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
-        <Button type="button" onClick={accept} className="!py-2.5">
-          Accept
+        <Button type="button" onClick={() => store("accepted")} className="!py-2.5">
+          Accept analytics
         </Button>
         <Button
           type="button"
           variant="secondary"
           className="!py-2.5"
-          onClick={accept}
+          onClick={() => store("essential")}
         >
           Essential only
         </Button>

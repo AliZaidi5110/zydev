@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useId, useState, type ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
@@ -20,6 +20,7 @@ export function ContactForm({
   defaultService,
   compact = false,
 }: ContactFormProps) {
+  const formId = useId();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
@@ -68,51 +69,93 @@ export function ContactForm({
     }
   }
 
+  function field(name: keyof ContactFormValues) {
+    const error = errors[name]?.message;
+    const id = `${formId}-${name}`;
+    const errorId = `${id}-error`;
+    return {
+      id,
+      error,
+      errorId,
+      describedBy: error ? errorId : undefined,
+      invalid: Boolean(error),
+    };
+  }
+
+  const nameField = field("name");
+  const emailField = field("email");
+  const phoneField = field("phone");
+  const companyField = field("company");
+  const serviceField = field("service");
+  const messageField = field("message");
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="space-y-4"
       noValidate
+      aria-busy={status === "loading"}
+      onChange={() => {
+        if (status === "success") setStatus("idle");
+      }}
     >
       <div className={compact ? "space-y-4" : "grid gap-4 sm:grid-cols-2"}>
-        <Field label="Name" error={errors.name?.message}>
+        <FieldShell label="Name" htmlFor={nameField.id} error={nameField.error} errorId={nameField.errorId}>
           <input
             {...register("name")}
+            id={nameField.id}
+            aria-invalid={nameField.invalid || undefined}
+            aria-describedby={nameField.describedBy}
             autoComplete="name"
             className="field-input"
             placeholder="Jane Smith"
           />
-        </Field>
-        <Field label="Email" error={errors.email?.message}>
+        </FieldShell>
+        <FieldShell label="Email" htmlFor={emailField.id} error={emailField.error} errorId={emailField.errorId}>
           <input
             {...register("email")}
+            id={emailField.id}
+            aria-invalid={emailField.invalid || undefined}
+            aria-describedby={emailField.describedBy}
             type="email"
             autoComplete="email"
             className="field-input"
             placeholder="jane@company.co.uk"
           />
-        </Field>
-        <Field label="Phone" error={errors.phone?.message}>
+        </FieldShell>
+        <FieldShell label="Phone" htmlFor={phoneField.id} error={phoneField.error} errorId={phoneField.errorId}>
           <input
             {...register("phone")}
+            id={phoneField.id}
+            aria-invalid={phoneField.invalid || undefined}
+            aria-describedby={phoneField.describedBy}
             type="tel"
             autoComplete="tel"
             className="field-input"
             placeholder="+44..."
           />
-        </Field>
-        <Field label="Company" error={errors.company?.message}>
+        </FieldShell>
+        <FieldShell label="Company" htmlFor={companyField.id} error={companyField.error} errorId={companyField.errorId}>
           <input
             {...register("company")}
+            id={companyField.id}
+            aria-invalid={companyField.invalid || undefined}
+            aria-describedby={companyField.describedBy}
             autoComplete="organization"
             className="field-input"
             placeholder="Your company"
           />
-        </Field>
+        </FieldShell>
       </div>
 
-      <Field label="Service interest" error={errors.service?.message}>
-        <select {...register("service")} className="field-input">
+      <FieldShell label="Service interest" htmlFor={serviceField.id} error={serviceField.error} errorId={serviceField.errorId}>
+        <select
+          {...register("service")}
+          id={serviceField.id}
+          aria-invalid={serviceField.invalid || undefined}
+          aria-describedby={serviceField.describedBy}
+          className="field-input"
+        >
           <option value="">Select a service</option>
           {serviceOptions.map((option) => (
             <option key={option} value={option}>
@@ -120,18 +163,20 @@ export function ContactForm({
             </option>
           ))}
         </select>
-      </Field>
+      </FieldShell>
 
-      <Field label="How can we help?" error={errors.message?.message}>
+      <FieldShell label="How can we help?" htmlFor={messageField.id} error={messageField.error} errorId={messageField.errorId}>
         <textarea
           {...register("message")}
+          id={messageField.id}
+          aria-invalid={messageField.invalid || undefined}
+          aria-describedby={messageField.describedBy}
           rows={compact ? 4 : 5}
           className="field-input resize-y"
           placeholder="Tell us about your goals, timeline, and budget if you have one."
         />
-      </Field>
+      </FieldShell>
 
-      {/* Honeypot */}
       <div className="hidden" aria-hidden>
         <label>
           Website
@@ -139,7 +184,11 @@ export function ContactForm({
         </label>
       </div>
 
-      <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
+      <Button
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full sm:w-auto"
+      >
         {status === "loading" ? "Sending..." : siteConfig.cta.primary}
       </Button>
 
@@ -158,22 +207,30 @@ export function ContactForm({
   );
 }
 
-function Field({
+function FieldShell({
   label,
+  htmlFor,
   error,
+  errorId,
   children,
 }: {
   label: string;
+  htmlFor: string;
   error?: string;
+  errorId: string;
   children: ReactNode;
 }) {
   return (
-    <label className="block text-sm">
-      <span className="mb-1.5 block font-medium text-ink">{label}</span>
+    <div className="block text-sm">
+      <label htmlFor={htmlFor} className="mb-1.5 block font-medium text-ink">
+        {label}
+      </label>
       {children}
       {error ? (
-        <span className="mt-1 block text-xs font-medium text-coral">{error}</span>
+        <span id={errorId} className="mt-1 block text-xs font-medium text-coral">
+          {error}
+        </span>
       ) : null}
-    </label>
+    </div>
   );
 }

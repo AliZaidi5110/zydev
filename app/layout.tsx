@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Syne } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AnalyticsGate } from "@/components/analytics/AnalyticsGate";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import {
-  OrganizationSchema,
-} from "@/components/seo/JsonLd";
+import { OrganizationSchema } from "@/components/seo/JsonLd";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -38,6 +35,7 @@ export const metadata: Metadata = {
     "custom SaaS development",
     "AI automation",
     "AI agents and chatbots",
+    "RAG systems",
     "CRM ERP dashboards",
     "mobile app development",
     "cloud DevOps",
@@ -55,7 +53,6 @@ export default function RootLayout({
     <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         <OrganizationSchema />
-        {/* LocalBusiness removed in enterprise rebrand — Organisation schema remains */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow-lift"
@@ -68,8 +65,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
-        <Analytics />
-        <SpeedInsights />
+        <AnalyticsGate />
       </body>
     </html>
   );

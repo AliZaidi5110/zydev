@@ -73,6 +73,7 @@ export const mainNav: NavItem[] = [
   },
   { label: "Pricing", href: "/pricing" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "AI Solutions", href: "/ai-solutions" },
   { label: "Expertise", href: "/expertise" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -81,7 +82,7 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   services: [
     { label: "Custom Software & SaaS", href: "/services/custom-software" },
-    { label: "AI Solutions", href: "/services/ai-solutions" },
+    { label: "AI Solutions", href: "/ai-solutions" },
     { label: "Enterprise Systems", href: "/services/enterprise-systems" },
     { label: "Mobile Applications", href: "/services/mobile-apps" },
     { label: "Cloud, APIs & DevOps", href: "/services/cloud-devops" },
@@ -89,6 +90,7 @@ export const footerNav = {
   ],
   company: [
     { label: "About", href: "/about" },
+    { label: "AI Solutions", href: "/ai-solutions" },
     { label: "Expertise", href: "/expertise" },
     { label: "Pricing", href: "/pricing" },
     { label: "Case Studies", href: "/case-studies" },

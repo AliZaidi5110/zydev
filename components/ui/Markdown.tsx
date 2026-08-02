@@ -6,12 +6,18 @@ function escapeHtml(value: string) {
     .replaceAll('"', "&quot;");
 }
 
+function sanitizeHref(href: string) {
+  const trimmed = href.trim();
+  if (/^(https?:|mailto:|\/|#)/i.test(trimmed)) return trimmed;
+  return "#";
+}
+
 function inlineFormat(text: string) {
   return escapeHtml(text)
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2">$1</a>',
-    )
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, label, href) => {
+      const safeHref = sanitizeHref(String(href));
+      return `<a href="${escapeHtml(safeHref)}">${label}</a>`;
+    })
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");
 }
