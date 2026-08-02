@@ -7,10 +7,12 @@ type RotatingStudioBadgeProps = {
   href?: string;
 };
 
-export function RotatingStudioBadge({ href = "#services" }: RotatingStudioBadgeProps) {
+export function RotatingStudioBadge({
+  href = "#services",
+}: RotatingStudioBadgeProps) {
   const id = useId().replace(/:/g, "");
   const pathId = `zydev-circle-${id}`;
-  const label = "ZYDEV SOFTWARE — ZYDEV SOFTWARE — ZYDEV SOFTWARE — ";
+  const label = "ZYDEV STUDIO — ZYDEV STUDIO — ZYDEV STUDIO — ";
 
   return (
     <Link
@@ -20,7 +22,7 @@ export function RotatingStudioBadge({ href = "#services" }: RotatingStudioBadgeP
     >
       <svg
         viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full animate-[shape-rotate_20s_linear_infinite] text-white"
+        className="absolute inset-0 h-full w-full animate-[shape-rotate_20s_linear_infinite] text-white motion-reduce:animate-none"
         aria-hidden
       >
         <defs>

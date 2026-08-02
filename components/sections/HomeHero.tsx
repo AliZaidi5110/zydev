@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { Button } from "@/components/ui/Button";
+import { RotatingStudioBadge } from "@/components/sections/RotatingStudioBadge";
 import { siteConfig } from "@/lib/site";
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-dvh overflow-hidden bg-ink text-white">
+    <section className="relative min-h-dvh overflow-hidden bg-black text-white">
       <div className="absolute inset-0">
         <Image
           src="/images/hero-studio-bg.jpg"
@@ -17,42 +18,50 @@ export function HomeHero() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0.72)_0%,rgba(11,18,32,0.45)_42%,rgba(11,18,32,0.82)_100%)]"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(15,118,110,0.18),transparent_50%)]"
+          className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70"
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <FadeIn className="max-w-4xl">
-          <p className="hero-brand font-display text-[clamp(3.4rem,12vw,8.5rem)] font-bold uppercase leading-[0.9]">
-            {siteConfig.name}
-          </p>
-          <h1 className="mt-6 max-w-2xl font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            {siteConfig.tagline}
+      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl flex-col px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-32 lg:px-12">
+        <FadeIn className="flex flex-1 flex-col justify-center">
+          <h1 className="hero-studio-title font-display text-[clamp(2.4rem,9vw,7.5rem)] font-bold uppercase leading-none tracking-[-0.04em] sm:whitespace-nowrap">
+            Zydev.Studio
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-            We design and build enterprise SaaS, AI systems, and business
-            platforms that leadership can trust and teams can run every day.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button
-              href="/contact"
-              className="w-full !bg-white !text-ink hover:!bg-white/90 sm:w-auto"
-            >
-              {siteConfig.cta.primary}
-            </Button>
-            <Button
-              href="/services"
-              variant="secondary"
-              className="w-full !border-white/30 !text-white hover:!border-white/60 hover:!bg-white/10 sm:w-auto"
-            >
-              {siteConfig.cta.secondary}
-            </Button>
-          </div>
         </FadeIn>
+
+        <div className="mt-8 grid items-end gap-8 sm:mt-10 lg:grid-cols-[1fr_auto] lg:gap-12">
+          <FadeIn delay={0.12} className="max-w-md">
+            <p className="text-sm leading-relaxed text-white/80 sm:text-base">
+              {siteConfig.name} builds enterprise SaaS, AI systems, and business
+              platforms — beautiful product experiences that help organisations
+              operate and grow with confidence.
+            </p>
+            <Link
+              href="/case-studies"
+              className="mt-5 inline-flex items-center gap-3 rounded-full border border-white/35 bg-black/25 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-ink"
+            >
+              <span>View our works</span>
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-ink">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M11.48 0L12.438 0.991L12.33 1.099C9.558 4.012 9.661 7.978 11.492 9.871L10.52 10.856C9.012 9.296 8.474 6.874 9.015 4.462L0.955 12.637L0 11.648L8.061 3.469C5.699 4.002 3.337 3.43 1.827 1.868L2.799 0.882C4.654 2.8 8.599 2.923 11.48 0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="justify-self-end">
+            <RotatingStudioBadge href="#services" />
+          </FadeIn>
+        </div>
       </div>
     </section>
   );
