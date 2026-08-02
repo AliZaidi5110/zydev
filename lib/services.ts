@@ -9,7 +9,13 @@ export type Service = {
   metaDescription: string;
   intro: string;
   summary: string;
-  icon: "globe" | "search" | "map" | "card" | "share" | "funding";
+  icon:
+    | "platform"
+    | "ai"
+    | "systems"
+    | "mobile"
+    | "cloud"
+    | "strategy";
   image?: string;
   imageAlt?: string;
   benefits: { title: string; description: string }[];
@@ -21,51 +27,50 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "website-design",
-    title: "Website Design & Development",
-    shortTitle: "Website Design",
-    primaryKeyword: "website design and development UK",
-    metaTitle: "Website Design & Development UK | Zydev",
+    slug: "custom-software",
+    title: "Custom Software & Enterprise SaaS",
+    shortTitle: "Custom Software",
+    primaryKeyword: "custom enterprise software development",
+    metaTitle: "Custom Software & Enterprise SaaS | Zydev",
     metaDescription:
-      "Conversion-focused website design and development for UK businesses. Fast, SEO-ready sites with clear CTAs, mobile-first UX, and measurable results.",
+      "Zydev designs and builds enterprise SaaS and custom business platforms — from marketplaces and booking systems to industry-specific software that improves revenue and operations.",
     intro:
-      "Looking for website design and development UK businesses can rely on to generate enquiries? Zydev builds fast, SEO-ready websites that look sharp, load quickly, and turn visitors into customers — without the agency fluff.",
+      "When off-the-shelf tools create workarounds, revenue leaks, or operational risk, Zydev builds software around your business model. We deliver enterprise SaaS products and custom platforms that teams actually adopt — with clear ownership, measurable outcomes, and room to scale.",
     summary:
-      "Modern, mobile-first websites engineered for speed, SEO, and conversions.",
-    icon: "globe",
-    image: "/images/website-design.jpg",
-    imageAlt:
-      "Hands typing on a laptop while building a modern website",
+      "SaaS products and custom platforms engineered for growth, reliability, and adoption.",
+    icon: "platform",
+    image: "/images/service-panel-2.png",
+    imageAlt: "Custom software and SaaS product interface mockup",
     benefits: [
       {
-        title: "Conversion-led design",
+        title: "Software that matches the business",
         description:
-          "Every layout decision supports a clear path to enquiry, booking, or purchase.",
+          "We model workflows, roles, and commercial rules so the product removes friction instead of adding another tool to manage.",
       },
       {
-        title: "Core Web Vitals ready",
+        title: "Built for multi-stakeholder delivery",
         description:
-          "Optimised images, clean code, and performance budgets that protect rankings.",
+          "Clear discovery, milestones, and stakeholder reviews keep product, operations, and leadership aligned.",
       },
       {
-        title: "SEO foundations baked in",
+        title: "Scalable product foundations",
         description:
-          "Semantic structure, metadata, schema, and internal linking from day one.",
+          "Architecture, permissions, and data models designed for growth — not a brittle MVP that needs rewriting in year two.",
       },
       {
-        title: "Mobile-first UX",
+        title: "Industry platforms",
         description:
-          "Touch-friendly navigation and layouts proven on real UK mobile traffic.",
+          "Healthcare, property, recruitment, marketplaces, booking, and internal business systems with domain-aware UX.",
       },
       {
-        title: "CMS-ready content",
+        title: "Integration-ready by design",
         description:
-          "Update pages, blogs, and case studies without waiting on a developer.",
+          "APIs, webhooks, and third-party connections planned early so finance, CRM, and operations stay connected.",
       },
       {
-        title: "Secure & scalable",
+        title: "Outcome-led roadmaps",
         description:
-          "Built on modern stacks with HTTPS, form protection, and room to grow.",
+          "Every release maps to operational efficiency, revenue enablement, or risk reduction — not feature theatre.",
       },
     ],
     process: [
@@ -73,602 +78,607 @@ export const services: Service[] = [
         step: "01",
         title: "Discover",
         description:
-          "We map your goals, audience, competitors, and conversion paths.",
+          "We clarify commercial goals, users, constraints, and success metrics before a single screen is designed.",
       },
       {
         step: "02",
-        title: "Design",
+        title: "Blueprint",
         description:
-          "Wireframes and visual direction aligned to your brand and SEO targets.",
+          "Information architecture, product scope, and delivery plan with phased releases your leadership can approve.",
       },
       {
         step: "03",
         title: "Build",
         description:
-          "Next.js development with performance, accessibility, and schema in scope.",
+          "Iterative delivery with demos, quality gates, and production discipline so progress stays visible.",
       },
       {
         step: "04",
-        title: "Launch & iterate",
+        title: "Launch & evolve",
         description:
-          "Go live with analytics, training, and a clear roadmap for continuous improvement.",
+          "Go-live support, training, and a backlog prioritised by business impact.",
       },
     ],
     pricingSnapshot: [
       {
-        name: "Launch",
-        price: "from £1,995",
-        note: "5–7 page brochure site",
+        name: "Discovery",
+        price: "from £4,500",
+        note: "Workshops, scope, and delivery blueprint",
       },
       {
-        name: "Growth",
-        price: "from £3,495",
-        note: "Custom design + CMS + SEO setup",
+        name: "MVP / Pilot",
+        price: "from £25,000",
+        note: "First production release for a defined use case",
       },
       {
-        name: "Scale",
-        price: "Custom",
-        note: "E-commerce, integrations, multi-location",
-      },
-    ],
-    faqs: [
-      {
-        question: "How long does a typical website project take?",
-        answer:
-          "Most brochure sites launch in 3–6 weeks depending on content readiness and feedback cycles. Larger builds are scoped with clear milestones.",
-      },
-      {
-        question: "Will my new website be SEO-ready?",
-        answer:
-          "Yes. We include technical SEO foundations: metadata, sitemap, robots, schema, semantic HTML, and performance best practices.",
-      },
-      {
-        question: "Can I update the site myself after launch?",
-        answer:
-          "Absolutely. We can structure content for easy updates via MDX or a headless CMS such as Sanity or Contentful.",
-      },
-      {
-        question: "Do you redesign existing websites?",
-        answer:
-          "Yes. We rebuild or refresh underperforming sites with a focus on conversions, speed, and search visibility.",
-      },
-    ],
-    relatedSlugs: ["seo-services", "card-payments", "social-media-marketing"],
-  },
-  {
-    slug: "seo-services",
-    title: "SEO Services",
-    shortTitle: "SEO",
-    primaryKeyword: "SEO services UK",
-    metaTitle: "SEO Services UK | Zydev",
-    metaDescription:
-      "Practical SEO services for UK businesses: technical audits, on-page optimisation, local SEO, and content that ranks and converts.",
-    intro:
-      "Zydev’s SEO services UK businesses choose when they want growth they can measure. We fix the technical foundations, target the right keywords, and build content that attracts buyers — not vanity traffic.",
-    summary: "Rank higher for the searches that actually drive revenue.",
-    icon: "search",
-    image: "/images/seo-services.jpg",
-    imageAlt:
-      "Laptop showing a website analytics dashboard used for SEO performance tracking",
-    benefits: [
-      {
-        title: "Technical SEO audits",
-        description:
-          "Crawlability, indexation, Core Web Vitals, and structured data fixes.",
-      },
-      {
-        title: "Keyword strategy",
-        description:
-          "Intent-led targeting mapped to services, locations, and funnel stages.",
-      },
-      {
-        title: "On-page optimisation",
-        description:
-          "Titles, headings, internal links, and content upgrades that move rankings.",
-      },
-      {
-        title: "Local SEO",
-        description:
-          "Location pages and Google Business Profile signals that win nearby demand.",
-      },
-      {
-        title: "Content systems",
-        description:
-          "Blog and landing page plans designed for long-tail compounding growth.",
-      },
-      {
-        title: "Transparent reporting",
-        description:
-          "Clear dashboards for rankings, traffic, and enquiry attribution.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Audit",
-        description: "Full technical, content, and competitor baseline.",
-      },
-      {
-        step: "02",
-        title: "Strategy",
-        description: "Prioritised roadmap tied to commercial keywords.",
-      },
-      {
-        step: "03",
-        title: "Execute",
-        description: "On-page, content, and authority work in monthly sprints.",
-      },
-      {
-        step: "04",
-        title: "Measure",
-        description: "Track rankings, conversions, and iterate what wins.",
-      },
-    ],
-    pricingSnapshot: [
-      {
-        name: "Foundation",
-        price: "from £499/mo",
-        note: "Local & SMB SEO",
-      },
-      {
-        name: "Growth",
-        price: "from £899/mo",
-        note: "Competitive markets",
-      },
-      {
-        name: "Enterprise",
-        price: "Custom",
-        note: "Multi-site / national",
+        name: "Platform",
+        price: "Custom SOW",
+        note: "Multi-module SaaS or enterprise build",
       },
     ],
     faqs: [
       {
-        question: "How quickly will I see SEO results?",
+        question: "Do you build greenfield SaaS or modernise existing systems?",
         answer:
-          "Technical wins can appear within weeks. Competitive ranking growth typically compounds over 3–6 months with consistent execution.",
+          "Both. We ship new products from discovery through launch, and we also rebuild or extend systems that have outgrown their original design.",
       },
       {
-        question: "Do you guarantee #1 rankings?",
+        question: "Can you work with our internal product and engineering teams?",
         answer:
-          "No ethical agency can. We focus on sustainable improvements and commercial outcomes you can track.",
+          "Yes. We commonly embed alongside client teams, share ownership of the roadmap, and hand over cleanly when you want to run the product in-house.",
       },
       {
-        question: "Is SEO included with website builds?",
+        question: "How do you keep enterprise projects on track?",
         answer:
-          "Every Zydev site ships with SEO foundations. Ongoing SEO retainers accelerate growth after launch.",
+          "Fixed discovery, phased releases, named decision-makers, and written acceptance criteria for each milestone.",
       },
     ],
-    relatedSlugs: ["website-design", "google-my-business", "social-media-marketing"],
+    relatedSlugs: ["ai-solutions", "enterprise-systems", "cloud-devops"],
   },
   {
-    slug: "google-my-business",
-    title: "Google My Business Optimisation",
-    shortTitle: "Google Business Profile",
-    primaryKeyword: "Google My Business optimisation",
-    metaTitle: "Google My Business Optimisation | Zydev",
+    slug: "ai-solutions",
+    title: "AI Solutions & Automation",
+    shortTitle: "AI Solutions",
+    primaryKeyword: "AI automation for enterprise",
+    metaTitle: "AI Agents, Chatbots & Automation | Zydev",
     metaDescription:
-      "Google Business Profile optimisation for UK local businesses — categories, posts, reviews, and local pack visibility that drives calls and visits.",
+      "Zydev builds AI chatbots, assistants, voice agents, workflow automation, and knowledge systems that cut cost-to-serve and accelerate decisions.",
     intro:
-      "Google My Business optimisation is one of the fastest ways for local UK businesses to get found. Zydev optimises your Google Business Profile so you show up in Maps and the local pack when nearby customers are ready to buy.",
-    summary: "Dominate local search and turn map views into real enquiries.",
-    icon: "map",
-    image: "/images/google-my-business.jpg",
-    imageAlt:
-      "Local business interior representing Google Business Profile and local discovery",
-    benefits: [
-      {
-        title: "Profile completeness",
-        description:
-          "Categories, services, attributes, and photos that match search intent.",
-      },
-      {
-        title: "Review strategy",
-        description:
-          "Ethical systems to earn, respond to, and leverage customer reviews.",
-      },
-      {
-        title: "Local posts & offers",
-        description:
-          "Fresh updates that keep your profile active and relevant.",
-      },
-      {
-        title: "NAP consistency",
-        description:
-          "Name, address, and phone alignment across the web to build trust.",
-      },
-      {
-        title: "Insight tracking",
-        description:
-          "Monitor calls, direction requests, and website clicks from Maps.",
-      },
-      {
-        title: "Multi-location support",
-        description:
-          "Structured optimisation for businesses with several branches.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Audit",
-        description: "Review current profile strength and competitor locals.",
-      },
-      {
-        step: "02",
-        title: "Optimise",
-        description: "Fix categories, copy, media, and service listings.",
-      },
-      {
-        step: "03",
-        title: "Activate",
-        description: "Posts, Q&A, and review workflows that stay consistent.",
-      },
-      {
-        step: "04",
-        title: "Grow",
-        description: "Monthly improvements guided by performance insights.",
-      },
-    ],
-    pricingSnapshot: [
-      {
-        name: "Setup",
-        price: "from £299",
-        note: "One-time optimisation",
-      },
-      {
-        name: "Managed",
-        price: "from £199/mo",
-        note: "Ongoing local growth",
-      },
-      {
-        name: "Multi-location",
-        price: "Custom",
-        note: "Per-location pricing",
-      },
-    ],
-    faqs: [
-      {
-        question: "Is Google My Business the same as Google Business Profile?",
-        answer:
-          "Yes — Google rebranded Google My Business to Google Business Profile. The optimisation principles are the same.",
-      },
-      {
-        question: "Can you recover a suspended profile?",
-        answer:
-          "We can help with reinstatement guidance and compliance fixes, though outcomes depend on Google’s review process.",
-      },
-      {
-        question: "Do I need a website as well?",
-        answer:
-          "A strong website improves trust and conversion, but profile optimisation still delivers value on its own for local discovery.",
-      },
-    ],
-    relatedSlugs: ["seo-services", "website-design", "social-media-marketing"],
-  },
-  {
-    slug: "card-payments",
-    title: "Card Payment Integration",
-    shortTitle: "Card Payments",
-    primaryKeyword: "card payment integration UK",
-    metaTitle: "Card Payment Integration UK | Zydev",
-    metaDescription:
-      "Secure card payment integration for UK websites — Stripe, PayPal, and checkout flows built for conversion, compliance, and peace of mind.",
-    intro:
-      "Need reliable card payment integration UK customers trust at checkout? Zydev connects Stripe, PayPal, and other gateways to your site with secure flows, clear UX, and fewer abandoned carts.",
-    summary: "Secure checkout experiences that customers finish — and trust.",
-    icon: "card",
-    image: "/images/card-payments.jpg",
-    imageAlt:
-      "Person entering card details on a laptop to complete a secure online payment",
-    benefits: [
-      {
-        title: "Gateway setup",
-        description:
-          "Stripe, PayPal, and provider configuration tailored to your offer.",
-      },
-      {
-        title: "Conversion-focused checkout",
-        description:
-          "Fewer steps, clearer trust signals, and mobile-optimised payment UX.",
-      },
-      {
-        title: "Security best practice",
-        description:
-          "PCI-aware integrations using hosted fields and secure redirects.",
-      },
-      {
-        title: "Subscriptions & invoicing",
-        description:
-          "Recurring billing and payment links for services and retainers.",
-      },
-      {
-        title: "Error handling",
-        description:
-          "Helpful failure states and retries that reduce lost sales.",
-      },
-      {
-        title: "Reporting hooks",
-        description:
-          "Connect payments to your CRM, email, or accounting workflows.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Scope",
-        description: "Define products, currencies, and payment scenarios.",
-      },
-      {
-        step: "02",
-        title: "Integrate",
-        description: "Implement gateway APIs and test mode end-to-end.",
-      },
-      {
-        step: "03",
-        title: "Harden",
-        description: "Security checks, webhooks, and failure handling.",
-      },
-      {
-        step: "04",
-        title: "Go live",
-        description: "Launch with monitoring and handover documentation.",
-      },
-    ],
-    pricingSnapshot: [
-      {
-        name: "Checkout",
-        price: "from £695",
-        note: "Single gateway setup",
-      },
-      {
-        name: "Commerce",
-        price: "from £1,495",
-        note: "Cart + products",
-      },
-      {
-        name: "Custom",
-        price: "Quote",
-        note: "Subscriptions & CRM sync",
-      },
-    ],
-    faqs: [
-      {
-        question: "Which payment providers do you support?",
-        answer:
-          "Most commonly Stripe and PayPal. We can also integrate other UK-friendly gateways based on your industry needs.",
-      },
-      {
-        question: "Are you PCI compliant?",
-        answer:
-          "We design integrations that keep card data off your servers using hosted checkout components wherever possible.",
-      },
-      {
-        question: "Can you add payments to my existing site?",
-        answer:
-          "Yes — we can integrate into many existing stacks, or recommend a rebuild if the current site can’t support secure checkout well.",
-      },
-    ],
-    relatedSlugs: ["website-design", "seo-services", "social-media-marketing"],
-  },
-  {
-    slug: "social-media-marketing",
-    title: "Social Media Management",
-    shortTitle: "Social Media",
-    primaryKeyword: "social media management UK",
-    metaTitle: "Social Media Management UK | Zydev",
-    metaDescription:
-      "Social media management for UK brands — content strategy, scheduling, community engagement, and campaigns that support real business goals.",
-    intro:
-      "Zydev provides social media management UK businesses use to stay consistent without hiring a full in-house team. We plan, create, and publish content that builds trust and supports SEO and paid campaigns.",
-    summary: "Consistent content and community care that supports growth.",
-    icon: "share",
-    image: "/images/social-media.jpg",
-    imageAlt:
-      "Smartphone home screen showing social media apps used for marketing",
-    benefits: [
-      {
-        title: "Content calendars",
-        description:
-          "Planned themes aligned to offers, seasons, and search demand.",
-      },
-      {
-        title: "Brand-consistent creatives",
-        description:
-          "Visuals and copy that feel like you — not generic templates.",
-      },
-      {
-        title: "Community management",
-        description:
-          "Timely replies and engagement that protect reputation.",
-      },
-      {
-        title: "Campaign support",
-        description:
-          "Launches, promotions, and retargeting-friendly creative packages.",
-      },
-      {
-        title: "Platform focus",
-        description:
-          "Instagram, Facebook, LinkedIn, and TikTok based on where your audience is.",
-      },
-      {
-        title: "Performance reviews",
-        description:
-          "Monthly insights so you know what’s working and what to cut.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Position",
-        description: "Clarify voice, audience, and content pillars.",
-      },
-      {
-        step: "02",
-        title: "Plan",
-        description: "Build a calendar tied to commercial moments.",
-      },
-      {
-        step: "03",
-        title: "Publish",
-        description: "Create, schedule, and engage across channels.",
-      },
-      {
-        step: "04",
-        title: "Optimise",
-        description: "Double down on formats that drive results.",
-      },
-    ],
-    pricingSnapshot: [
-      {
-        name: "Essential",
-        price: "from £449/mo",
-        note: "2 platforms",
-      },
-      {
-        name: "Growth",
-        price: "from £749/mo",
-        note: "3–4 platforms + reporting",
-      },
-      {
-        name: "Full-service",
-        price: "Custom",
-        note: "Ads + content studio",
-      },
-    ],
-    faqs: [
-      {
-        question: "How many posts will we get each month?",
-        answer:
-          "Packages typically include 8–16 posts per platform depending on tier, plus stories/reels where relevant.",
-      },
-      {
-        question: "Do you run paid social ads?",
-        answer:
-          "Yes — ad management can be added to growth and full-service packages.",
-      },
-      {
-        question: "Can social support our SEO?",
-        answer:
-          "Social won’t replace SEO, but consistent branded content and traffic signals support overall digital visibility.",
-      },
-    ],
-    relatedSlugs: ["seo-services", "website-design", "google-my-business"],
-  },
-  {
-    slug: "business-funding",
-    title: "Business Funding",
-    shortTitle: "Business Funding",
-    primaryKeyword: "business funding UK",
-    metaTitle: "Business Funding Support UK | Zydev",
-    metaDescription:
-      "Business funding support for UK SMEs — guidance on finance options, readiness checks, and applications so you can fund growth with confidence.",
-    intro:
-      "Looking for business funding UK companies can actually access? Zydev helps you prepare, present, and pursue the right finance options — so growth plans are backed by capital, not guesswork.",
+      "AI only creates value when it removes real operational load. Zydev designs assistants, chatbots, voice agents, and workflow automation that plug into your data and processes — so support, sales, and operations move faster with fewer handoffs.",
     summary:
-      "Funding readiness and application support that helps UK businesses unlock capital.",
-    icon: "funding",
-    image: "/images/business-funding.jpg",
-    imageAlt:
-      "Business finance documents and calculator representing UK business funding support",
+      "Practical AI systems that reduce manual work and improve customer response.",
+    icon: "ai",
+    image: "/images/service-panel-3.png",
+    imageAlt: "AI automation and digital systems visual",
     benefits: [
       {
-        title: "Funding readiness review",
+        title: "Customer support that scales",
         description:
-          "We assess cash flow, documents, and positioning before you approach lenders or investors.",
+          "Chat and voice agents that resolve routine requests, escalate cleanly, and keep humans focused on high-value work.",
       },
       {
-        title: "Option matching",
+        title: "Workflow automation",
         description:
-          "Clear guidance on grants, loans, asset finance, and other routes suited to your goals.",
+          "Replace repetitive ops chains with reliable automations across tools, approvals, and notifications.",
       },
       {
-        title: "Application support",
+        title: "Knowledge that answers itself",
         description:
-          "Help preparing packs, forecasts, and narratives that make your case easier to approve.",
+          "Document search and RAG systems so teams find accurate answers inside policies, SOPs, and product docs.",
       },
       {
-        title: "Growth-aligned plans",
+        title: "Governed by design",
         description:
-          "Funding requests tied to real commercial outcomes — websites, marketing, equipment, or expansion.",
+          "Clear boundaries, auditability, and human oversight where decisions matter.",
       },
       {
-        title: "Digital credibility",
+        title: "Integrated into the stack",
         description:
-          "Pair funding with a stronger web and SEO presence so lenders and partners see a serious business.",
+          "Connected to CRM, helpdesk, booking, and internal systems — not a disconnected demo chatbot.",
       },
       {
-        title: "Ongoing advice",
+        title: "Measured business impact",
         description:
-          "Practical next steps after submission, including follow-ups and alternative routes if needed.",
+          "We define success as deflection rate, handling time, conversion lift, or cycle-time reduction.",
       },
     ],
     process: [
       {
         step: "01",
-        title: "Discover",
+        title: "Use-case selection",
         description:
-          "Understand funding needs, timelines, and what capital will unlock.",
+          "Identify high-volume, high-cost workflows where AI can safely create value.",
       },
       {
         step: "02",
-        title: "Prepare",
+        title: "Data & guardrails",
         description:
-          "Organise financials, forecasts, and business narrative for review.",
+          "Map sources, permissions, escalation paths, and evaluation criteria.",
       },
       {
         step: "03",
-        title: "Apply",
+        title: "Pilot",
         description:
-          "Support applications to suitable funding routes with clear documentation.",
+          "Ship a controlled release with monitoring and human review loops.",
       },
       {
         step: "04",
-        title: "Progress",
+        title: "Scale",
         description:
-          "Track outcomes and refine your plan for the next growth stage.",
+          "Expand coverage, harden integrations, and train teams to operate the system.",
       },
     ],
     pricingSnapshot: [
       {
-        name: "Readiness",
-        price: "from £495",
-        note: "Assessment & recommendations",
+        name: "AI Opportunity Audit",
+        price: "from £3,500",
+        note: "Prioritised use cases and ROI hypotheses",
       },
       {
-        name: "Application",
-        price: "from £995",
-        note: "Pack prep + submission support",
+        name: "Pilot Agent",
+        price: "from £12,000",
+        note: "One production workflow with reporting",
       },
       {
-        name: "Growth retainers",
-        price: "Custom",
-        note: "Funding + digital growth bundle",
+        name: "Programme",
+        price: "Custom SOW",
+        note: "Multi-agent / multi-channel rollout",
       },
     ],
     faqs: [
       {
-        question: "Do you provide the funding yourselves?",
+        question: "Will you force AI into every project?",
         answer:
-          "We guide and support your applications. Finance is arranged through appropriate third-party lenders, schemes, or partners — not as Zydev capital.",
+          "No. We recommend AI where it reduces cost, risk, or cycle time. If a simpler automation or UX change is better, we say so.",
       },
       {
-        question: "What types of funding can you help with?",
+        question: "Can AI systems use our private documents securely?",
         answer:
-          "Depending on eligibility, we can support routes such as business loans, grants, asset finance, and other SME-friendly options available in the UK.",
+          "Yes. We design retrieval and access controls around your data boundaries and deployment preferences.",
       },
       {
-        question: "Can funding be combined with website or SEO work?",
+        question: "How do you avoid hallucinated answers in customer support?",
         answer:
-          "Yes. Many clients fund growth programmes that include website upgrades, SEO, or marketing — and we can scope those alongside funding support.",
-      },
-      {
-        question: "Is approval guaranteed?",
-        answer:
-          "No. Approval depends on the funder’s criteria and your business profile. We focus on preparation and presentation to improve your chances.",
+          "Ground responses in approved knowledge, constrain tool use, escalate uncertainty, and review real conversations during pilots.",
       },
     ],
-    relatedSlugs: ["website-design", "seo-services", "card-payments"],
+    relatedSlugs: ["custom-software", "enterprise-systems", "product-strategy"],
+  },
+  {
+    slug: "enterprise-systems",
+    title: "CRM, ERP, Portals & Dashboards",
+    shortTitle: "Enterprise Systems",
+    primaryKeyword: "custom CRM ERP dashboards",
+    metaTitle: "CRM, ERP, Portals & Dashboards | Zydev",
+    metaDescription:
+      "Zydev builds CRM and ERP workflows, admin panels, customer and vendor portals, and executive dashboards that improve visibility and control.",
+    intro:
+      "Spreadsheets and bolted-on tools eventually break under growth. Zydev designs enterprise systems — CRM and ERP workflows, admin panels, customer portals, vendor portals, and dashboards — so leadership sees reality and teams execute with less friction.",
+    summary:
+      "Operational systems and portals that give teams control and leadership clarity.",
+    icon: "systems",
+    image: "/images/service-panel-1.png",
+    imageAlt: "Enterprise dashboard and portal interface mockup",
+    benefits: [
+      {
+        title: "Single source of operational truth",
+        description:
+          "Replace fragmented spreadsheets with roles, permissions, and workflows people trust.",
+      },
+      {
+        title: "Customer & vendor portals",
+        description:
+          "Self-serve experiences that cut inbound tickets and improve partner collaboration.",
+      },
+      {
+        title: "Executive dashboards",
+        description:
+          "KPIs and operational views that support decisions without waiting on monthly reports.",
+      },
+      {
+        title: "Admin panels that reduce support load",
+        description:
+          "Internal tools designed for speed, audit trails, and safe bulk actions.",
+      },
+      {
+        title: "CRM & ERP alignment",
+        description:
+          "Custom modules and integrations that fit your sales, fulfilment, and finance processes.",
+      },
+      {
+        title: "Adoption as a delivery goal",
+        description:
+          "Training, migration, and UX designed so the system becomes how work gets done.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Process mapping",
+        description:
+          "Document current workflows, pain points, and compliance needs with operators — not just stakeholders.",
+      },
+      {
+        step: "02",
+        title: "System design",
+        description:
+          "Define entities, permissions, reporting, and migration approach before build.",
+      },
+      {
+        step: "03",
+        title: "Implement",
+        description:
+          "Deliver modules in priority order so value appears before the full programme finishes.",
+      },
+      {
+        step: "04",
+        title: "Operate",
+        description:
+          "Handover, training, and iteration based on real usage data.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "Ops Assessment",
+        price: "from £4,000",
+        note: "Process map and system recommendation",
+      },
+      {
+        name: "Core Module",
+        price: "from £18,000",
+        note: "First production workflow or portal",
+      },
+      {
+        name: "Enterprise Suite",
+        price: "Custom SOW",
+        note: "Multi-module CRM/ERP/portal programme",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should we customise an existing CRM or build our own?",
+        answer:
+          "We help you decide. Sometimes configuration wins; sometimes a custom system is cheaper than fighting a platform that does not fit.",
+      },
+      {
+        question: "Can you migrate historical data safely?",
+        answer:
+          "Yes. Migration planning, validation, and rollback paths are part of delivery for operational systems.",
+      },
+      {
+        question: "Do you build reporting for non-technical leaders?",
+        answer:
+          "Yes. Dashboards are designed for the decisions they support, not raw database dumps.",
+      },
+    ],
+    relatedSlugs: ["custom-software", "ai-solutions", "cloud-devops"],
+  },
+  {
+    slug: "mobile-apps",
+    title: "Mobile Applications",
+    shortTitle: "Mobile Apps",
+    primaryKeyword: "enterprise mobile app development",
+    metaTitle: "Enterprise Mobile App Development | Zydev",
+    metaDescription:
+      "Zydev builds customer and workforce mobile apps that improve engagement, field operations, and revenue — with reliability and clear product ownership.",
+    intro:
+      "Mobile is often where customers buy and field teams deliver. Zydev designs and builds mobile applications that stay fast, secure, and maintainable — whether you need a customer product, booking experience, or internal operations app.",
+    summary:
+      "Customer and workforce apps designed for reliability and long-term ownership.",
+    icon: "mobile",
+    image: "/images/website-design-service.png",
+    imageAlt: "Mobile application product experience",
+    benefits: [
+      {
+        title: "Product thinking, not just screens",
+        description:
+          "We define journeys, retention loops, and operational requirements before pixels.",
+      },
+      {
+        title: "Offline-aware field workflows",
+        description:
+          "Apps that support real-world conditions for teams who cannot rely on perfect connectivity.",
+      },
+      {
+        title: "Secure by default",
+        description:
+          "Auth, session handling, and data access designed for enterprise expectations.",
+      },
+      {
+        title: "Backend + app as one system",
+        description:
+          "APIs, admin tools, and notifications planned together so the product does not fracture.",
+      },
+      {
+        title: "Store-ready delivery",
+        description:
+          "Release process, monitoring, and iteration plans that continue after launch day.",
+      },
+      {
+        title: "Measurable adoption",
+        description:
+          "Analytics tied to activation, completion, and support load — not vanity downloads.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Product framing",
+        description:
+          "Clarify users, jobs-to-be-done, and commercial success metrics.",
+      },
+      {
+        step: "02",
+        title: "Experience design",
+        description:
+          "Flows and prototypes validated with stakeholders before engineering scale-up.",
+      },
+      {
+        step: "03",
+        title: "Build & harden",
+        description:
+          "Iterative releases with QA, performance, and security checks.",
+      },
+      {
+        step: "04",
+        title: "Launch & improve",
+        description:
+          "Store submission support, monitoring, and a prioritised improvement backlog.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "App Discovery",
+        price: "from £4,500",
+        note: "Scope, UX direction, and technical plan",
+      },
+      {
+        name: "MVP App",
+        price: "from £30,000",
+        note: "First production release for core journeys",
+      },
+      {
+        name: "Product Programme",
+        price: "Custom SOW",
+        note: "Multi-platform roadmap with ongoing delivery",
+      },
+    ],
+    faqs: [
+      {
+        question: "Native, cross-platform, or progressive web app?",
+        answer:
+          "We recommend based on device needs, offline requirements, budget, and time-to-market — not a one-size preference.",
+      },
+      {
+        question: "Can the app connect to our existing systems?",
+        answer:
+          "Yes. Integration planning is part of discovery so mobile does not become an island.",
+      },
+      {
+        question: "Do you support post-launch maintenance?",
+        answer:
+          "Yes. We can run retainers for releases, monitoring, and continuous improvement.",
+      },
+    ],
+    relatedSlugs: ["custom-software", "product-strategy", "cloud-devops"],
+  },
+  {
+    slug: "cloud-devops",
+    title: "APIs, Cloud Solutions & DevOps",
+    shortTitle: "Cloud & DevOps",
+    primaryKeyword: "cloud API DevOps consulting",
+    metaTitle: "Cloud Solutions, APIs & DevOps | Zydev",
+    metaDescription:
+      "Zydev designs APIs, cloud architecture, and DevOps pipelines that improve reliability, security, and delivery speed for software products.",
+    intro:
+      "Great products fail when infrastructure and delivery are fragile. Zydev builds APIs, cloud foundations, and DevOps practices that keep releases predictable, environments secure, and systems observable as you scale.",
+    summary:
+      "Reliable cloud foundations, APIs, and delivery pipelines for serious products.",
+    icon: "cloud",
+    image: "/images/seo-services.png",
+    imageAlt: "Cloud infrastructure and systems architecture visual",
+    benefits: [
+      {
+        title: "APIs that other teams can trust",
+        description:
+          "Clear contracts, versioning, and documentation so partners and internal products integrate safely.",
+      },
+      {
+        title: "Cloud architecture for growth",
+        description:
+          "Environments designed for cost control, resilience, and sensible scaling — not accidental complexity.",
+      },
+      {
+        title: "Delivery without drama",
+        description:
+          "CI/CD, reviews, and release discipline that shorten lead time and reduce production surprises.",
+      },
+      {
+        title: "Observability",
+        description:
+          "Logging, alerting, and health signals so issues are found before customers report them.",
+      },
+      {
+        title: "Security posture",
+        description:
+          "Secrets handling, access control, and hardening practices built into the operating model.",
+      },
+      {
+        title: "Platform enablement",
+        description:
+          "We leave your team with runbooks and ownership, not a black box only we can touch.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Assess",
+        description:
+          "Review architecture, delivery bottlenecks, risk, and cost drivers.",
+      },
+      {
+        step: "02",
+        title: "Design",
+        description:
+          "Target architecture and pipeline plan with clear migration steps.",
+      },
+      {
+        step: "03",
+        title: "Implement",
+        description:
+          "Ship infrastructure and API improvements in controlled increments.",
+      },
+      {
+        step: "04",
+        title: "Harden",
+        description:
+          "Monitoring, documentation, and operating practices for day-two ownership.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "Platform Review",
+        price: "from £3,500",
+        note: "Architecture and delivery assessment",
+      },
+      {
+        name: "Foundation Sprint",
+        price: "from £10,000",
+        note: "CI/CD, environments, or API hardening",
+      },
+      {
+        name: "Cloud Programme",
+        price: "Custom SOW",
+        note: "Migration, platform, or multi-service delivery",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you work with existing AWS or Vercel setups?",
+        answer:
+          "Yes. We improve what you have where it makes sense, and redesign where the current setup blocks scale or security.",
+      },
+      {
+        question: "Can you support regulated environments?",
+        answer:
+          "We design for auditability, access control, and operational discipline. Specific compliance programmes are scoped per engagement.",
+      },
+      {
+        question: "Will this slow product delivery?",
+        answer:
+          "Done well, DevOps and solid APIs speed delivery by reducing firefighting and integration rework.",
+      },
+    ],
+    relatedSlugs: ["custom-software", "enterprise-systems", "mobile-apps"],
+  },
+  {
+    slug: "product-strategy",
+    title: "Product Strategy, UI/UX & Digital Transformation",
+    shortTitle: "Product Strategy",
+    primaryKeyword: "digital transformation product strategy",
+    metaTitle: "Product Strategy, UI/UX & Transformation | Zydev",
+    metaDescription:
+      "Zydev helps leadership teams define product strategy, UX, and digital transformation programmes that turn ambition into shippable software.",
+    intro:
+      "Technology programmes fail when strategy, experience, and delivery stay disconnected. Zydev helps organisations decide what to build, design experiences people can use, and run transformation in phases that protect operations while creating momentum.",
+    summary:
+      "Strategy and UX that turn digital ambition into shippable, adopted products.",
+    icon: "strategy",
+    image: "/images/service-panel-4.png",
+    imageAlt: "Product strategy and brand systems visual",
+    benefits: [
+      {
+        title: "Clarity before commitment",
+        description:
+          "Prioritised roadmaps, opportunity sizing, and decision frameworks for leadership.",
+      },
+      {
+        title: "UI/UX that drives adoption",
+        description:
+          "Interfaces designed around tasks, risk, and speed — not decorative redesigns.",
+      },
+      {
+        title: "Transformation in phases",
+        description:
+          "Change programmes sequenced so operations keep running while capability improves.",
+      },
+      {
+        title: "Stakeholder alignment",
+        description:
+          "Workshops and artefacts that get product, ops, IT, and commercial teams on one page.",
+      },
+      {
+        title: "Design systems that scale",
+        description:
+          "Reusable patterns that keep multi-product experiences coherent and cheaper to extend.",
+      },
+      {
+        title: "From strategy to engineering",
+        description:
+          "We do not stop at decks — recommendations connect directly to buildable scopes.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Align",
+        description:
+          "Capture goals, constraints, and success definitions with decision-makers.",
+      },
+      {
+        step: "02",
+        title: "Diagnose",
+        description:
+          "Map journeys, systems, and organisational friction that block outcomes.",
+      },
+      {
+        step: "03",
+        title: "Design",
+        description:
+          "Prototype experiences and define the transformation roadmap.",
+      },
+      {
+        step: "04",
+        title: "Activate",
+        description:
+          "Hand into delivery with clear ownership, KPIs, and first release scope.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "Strategy Sprint",
+        price: "from £5,000",
+        note: "Prioritised roadmap and recommendations",
+      },
+      {
+        name: "UX Engagement",
+        price: "from £8,000",
+        note: "Research, flows, and validated prototypes",
+      },
+      {
+        name: "Transformation Programme",
+        price: "Custom SOW",
+        note: "Multi-workstream change with delivery partners",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you run strategy without also building the product?",
+        answer:
+          "Yes. Many clients engage us for strategy and UX first, then choose in-house or Zydev delivery for build.",
+      },
+      {
+        question: "How do you handle resistance to change?",
+        answer:
+          "We involve operators early, show working prototypes, and sequence releases so teams feel progress without operational shock.",
+      },
+      {
+        question: "Is this only for large enterprises?",
+        answer:
+          "No. Growth companies use the same discipline when the cost of a wrong build is high.",
+      },
+    ],
+    relatedSlugs: ["custom-software", "ai-solutions", "mobile-apps"],
   },
 ];
 
@@ -679,3 +689,5 @@ export function getService(slug: string) {
 export function getRelatedServices(slugs: string[]) {
   return services.filter((service) => slugs.includes(service.slug));
 }
+
+export const serviceSlugs = services.map((service) => service.slug);

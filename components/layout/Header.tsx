@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { mainNav, siteConfig } from "@/lib/site";
@@ -13,6 +13,8 @@ export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === "/";
   const overlay = isHome && !scrolled && !open;
 
@@ -29,25 +31,42 @@ export function Header() {
   }, [open]);
 
   useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    const firstLink = menuRef.current?.querySelector<HTMLElement>("a, button");
+    firstLink?.focus();
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  useEffect(() => {
     if (!isHome) {
       setScrolled(false);
       return;
     }
 
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
   const linkBase = overlay
-    ? "text-white/90 hover:bg-white/10 hover:text-white"
-    : "text-ink/80 hover:bg-ink/5";
-  const linkActive = overlay ? "text-white" : "text-coral";
+    ? "text-white/80 hover:text-white"
+    : "text-ink/70 hover:text-ink";
+  const linkActive = overlay ? "text-white" : "text-ink";
 
   return (
     <header
-      className={`z-50 transition-colors duration-300 ${
+      className={`z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         isHome ? "fixed inset-x-0 top-0" : "sticky top-0"
       } ${
         overlay
@@ -55,20 +74,20 @@ export function Header() {
           : "border-b border-ink/8 bg-canvas/90 backdrop-blur-md"
       }`}
     >
-      <Container className="flex h-16 items-center justify-between gap-4 sm:h-[4.25rem]">
+      <Container className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
         <Link
           href="/"
-          className={`font-display text-2xl font-bold tracking-tight ${
+          className={`font-display text-[1.65rem] font-bold tracking-tight ${
             overlay ? "text-white" : "text-ink"
           }`}
           aria-label={`${siteConfig.name} home`}
         >
           Zy
-          <span className={overlay ? "text-white/85" : "text-coral"}>dev</span>
+          <span className={overlay ? "text-white/80" : "text-coral"}>dev</span>
         </Link>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 lg:flex"
           aria-label="Primary"
         >
           {mainNav.map((item) => {
@@ -77,7 +96,7 @@ export function Header() {
                 <div key={item.href} className="relative">
                   <button
                     type="button"
-                    className={`rounded-md px-3 py-2 text-sm font-medium transition ${
+                    className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
                       pathname.startsWith("/services") ? linkActive : linkBase
                     }`}
                     aria-expanded={servicesOpen}
@@ -97,20 +116,20 @@ export function Header() {
                   </button>
                   {servicesOpen ? (
                     <div
-                      className="absolute left-0 top-full z-50 mt-2 w-80 rounded-xl border border-ink/10 bg-white p-2 shadow-lift"
+                      className="absolute left-0 top-full z-50 mt-3 w-[22rem] border border-ink/10 bg-white p-2 shadow-lift"
                       onMouseLeave={() => setServicesOpen(false)}
                     >
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block rounded-lg px-3 py-2.5 transition hover:bg-mist"
+                          className="block px-3 py-2.5 transition hover:bg-mist/80"
                         >
                           <span className="block text-sm font-semibold text-ink">
                             {child.label}
                           </span>
                           {child.description ? (
-                            <span className="mt-0.5 block text-xs text-slate">
+                            <span className="mt-0.5 block text-xs leading-relaxed text-slate">
                               {child.description}
                             </span>
                           ) : null}
@@ -131,7 +150,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition ${
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
                   active ? linkActive : linkBase
                 }`}
               >
@@ -141,13 +160,13 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2.5 lg:flex">
           <Button
-            href="/contact"
+            href="/services"
             variant="secondary"
             className={`!py-2.5 ${
               overlay
-                ? "!border-white/40 !bg-white/10 !text-white hover:!bg-white/20"
+                ? "!border-white/30 !text-white hover:!border-white/55 hover:!bg-white/10"
                 : ""
             }`}
           >
@@ -164,19 +183,35 @@ export function Header() {
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
-          className={`inline-flex h-10 w-10 items-center justify-center rounded-md border lg:hidden ${
+          className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border lg:hidden ${
             overlay
-              ? "border-white/35 text-white"
-              : "border-ink/10 text-ink"
+              ? "border-white/30 text-white"
+              : "border-ink/12 text-ink"
           }`}
           aria-expanded={open}
           aria-controls={menuId}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((value) => !value)}
         >
-          <span aria-hidden className="text-lg leading-none">
-            {open ? "✕" : "☰"}
+          <span className="sr-only">{open ? "Close" : "Open"} menu</span>
+          <span aria-hidden className="flex flex-col gap-1.5">
+            <span
+              className={`block h-px w-4 bg-current transition ${
+                open ? "translate-y-[3.5px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-px w-4 bg-current transition ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-px w-4 bg-current transition ${
+                open ? "-translate-y-[3.5px] -rotate-45" : ""
+              }`}
+            />
           </span>
         </button>
       </Container>
@@ -184,14 +219,15 @@ export function Header() {
       {open ? (
         <div
           id={menuId}
+          ref={menuRef}
           className="border-t border-ink/8 bg-canvas lg:hidden"
         >
-          <Container className="flex max-h-[calc(100dvh-4rem)] flex-col gap-1 overflow-y-auto py-4">
+          <Container className="flex max-h-[calc(100dvh-4rem)] flex-col gap-1 overflow-y-auto py-5">
             {mainNav.map((item) => (
               <div key={item.href}>
                 <Link
                   href={item.href}
-                  className="block rounded-md px-3 py-3 text-base font-semibold text-ink"
+                  className="block rounded-lg px-3 py-3 text-base font-semibold text-ink"
                 >
                   {item.label}
                 </Link>
@@ -201,7 +237,7 @@ export function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-md px-2 py-2 text-sm text-slate hover:text-coral"
+                        className="block rounded-lg px-2 py-2 text-sm text-slate hover:text-ink"
                       >
                         {child.label}
                       </Link>
@@ -210,9 +246,9 @@ export function Header() {
                 ) : null}
               </div>
             ))}
-            <div className="mt-3 flex flex-col gap-2 px-1 pb-2">
+            <div className="mt-4 flex flex-col gap-2.5 px-1 pb-2">
               <Button href="/contact">{siteConfig.cta.primary}</Button>
-              <Button href="/contact" variant="secondary">
+              <Button href="/services" variant="secondary">
                 {siteConfig.cta.secondary}
               </Button>
             </div>

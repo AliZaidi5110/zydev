@@ -1,6 +1,6 @@
 # Zydev
 
-Production-ready Next.js website for **Zydev**, a UK digital services agency.
+Production-ready Next.js website for **Zydev**, an international software agency building enterprise SaaS, custom platforms, AI automation, mobile apps, and cloud systems.
 
 ## Stack
 

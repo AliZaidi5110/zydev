@@ -33,7 +33,7 @@ export function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-xl rounded-xl border border-ink/10 bg-white p-5 shadow-lift sm:inset-x-auto sm:right-6 sm:bottom-6"
+      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-xl border border-ink/10 bg-white p-5 shadow-lift sm:inset-x-auto sm:right-6 sm:bottom-6"
     >
       <p className="text-sm leading-relaxed text-slate">
         We use essential cookies to run this site and optional analytics to

@@ -2,217 +2,72 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { services } from "@/lib/services";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const featureList = [
-  "Style guide creation",
-  "Color & typography",
-  "Brand consistency",
-  "Visual storytelling",
-  "Logo design",
-];
-
-/** Matches the Reak screenshot: pastel panels + provided mockup images */
-const servicePanels = [
-  {
-    title: "User Interface & Experience Design",
-    href: "/services/website-design",
-    bg: "#ABF5FF",
-    image: "/images/service-panel-1.png",
-    imageAlt: "UI and UX design mockup with electric eco-friendly product site",
-  },
-  {
-    title: "Web Development",
-    href: "/services/website-design",
-    bg: "#c6cfff",
-    image: "/images/service-panel-2.png",
-    imageAlt: "Web development mockup with bold product landing page",
-  },
-  {
-    title: "Search Engine Optimization",
-    href: "/services/seo-services",
-    bg: "#ffb8b0",
-    image: "/images/service-panel-3.png",
-    imageAlt: "SEO and brand visibility mockup on a digital billboard",
-  },
-  {
-    title: "Brand identity design",
-    href: "/services/social-media-marketing",
-    bg: "#fbe8a4",
-    image: "/images/service-panel-4.png",
-    imageAlt: "Brand identity design logo mark on a dark background",
-  },
-] as const;
-
-function PlusIcon() {
-  return (
-    <span aria-hidden className="mt-0.5 inline-flex w-4 shrink-0 font-semibold text-ink">
-      +
-    </span>
-  );
-}
+const showcase = services.slice(0, 4);
 
 export function ServicesShowcase() {
-  const areaRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-
-  useLayoutEffect(() => {
-    const area = areaRef.current;
-    const title = titleRef.current;
-    if (!area || !title) return;
-
-    const ctx = gsap.context(() => {
-      const words = title.querySelectorAll<HTMLElement>("[data-word]");
-      gsap.from(words, {
-        opacity: 0,
-        y: 28,
-        stagger: 0.09,
-        ease: "none",
-        scrollTrigger: {
-          trigger: title,
-          start: "top 75%",
-          end: "top 35%",
-          scrub: 0.7,
-        },
-      });
-
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 1024px)", () => {
-        const panelEls = gsap.utils.toArray<HTMLElement>("[data-panel-pin]");
-        panelEls.forEach((section) => {
-          gsap.fromTo(
-            section,
-            {
-              transformOrigin: "100% 0% 0px",
-              yPercent: 0,
-              rotate: 0,
-              scale: 1,
-            },
-            {
-              yPercent: 5,
-              rotate: 12,
-              scale: 0.82,
-              ease: "none",
-              scrollTrigger: {
-                trigger: section,
-                pin: section,
-                scrub: 1,
-                start: "top 18%",
-                end: "bottom 75%",
-                endTrigger: area,
-                pinSpacing: false,
-              },
-            },
-          );
-        });
-      });
-    }, area);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
       id="services"
-      ref={areaRef}
       aria-labelledby="services-heading"
-      className="relative bg-black text-white"
+      className="section-pad border-y border-ink/8 bg-white"
     >
-      <Container className="relative pt-16 sm:pt-20 lg:pt-24">
-        <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
-          Services
-        </p>
+      <Container>
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            id="services-heading"
+            eyebrow="Capabilities"
+            title="Software that moves businesses"
+            description="From custom platforms and AI automation to enterprise systems and cloud foundations — scoped around commercial outcomes."
+          />
+          <Button href="/services" variant="secondary" className="w-full sm:w-auto">
+            View all services
+          </Button>
+        </div>
 
-        <h2
-          id="services-heading"
-          ref={titleRef}
-          className="mx-auto mb-12 max-w-4xl text-center font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:mb-16 sm:text-5xl lg:mb-20 lg:text-6xl xl:text-7xl"
-        >
-          <span data-word className="inline-block text-white">
-            Solutions
-          </span>{" "}
-          <span data-word className="inline-block text-white">
-            that
-          </span>
-          <br />
-          <span data-word className="inline-block text-white/45">
-            Drive
-          </span>{" "}
-          <span data-word className="inline-block text-white/45">
-            results
-          </span>
-        </h2>
-      </Container>
-
-      <div className="relative px-4 pb-8 sm:px-6 sm:pb-12 lg:pb-[35vh]">
-        {servicePanels.map((panel, index) => (
-          <article
-            key={panel.title}
-            data-panel-pin
-            className="relative mx-auto mb-5 w-[min(100%,1080px)] overflow-hidden rounded-[2rem] px-5 py-7 text-ink sm:mb-6 sm:px-8 sm:py-9 lg:mb-8 lg:min-h-[400px] lg:px-10 lg:py-10"
-            style={{
-              backgroundColor: panel.bg,
-              zIndex: index + 1,
-            }}
-          >
-            <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]">
+        <div className="mt-12 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:mt-14 lg:grid-cols-2">
+          {showcase.map((service, index) => (
+            <FadeIn key={service.slug} delay={index * 0.05}>
               <Link
-                href={panel.href}
-                className="underline-offset-4 transition hover:underline"
+                href={`/services/${service.slug}`}
+                className="group grid h-full bg-white transition hover:bg-canvas sm:grid-cols-[0.9fr_1.1fr]"
               >
-                {panel.title}
+                <div className="relative min-h-44 overflow-hidden bg-mist sm:min-h-full">
+                  {service.image ? (
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt ?? service.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 28vw"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      priority={index === 0}
+                    />
+                  ) : null}
+                </div>
+                <div className="flex flex-col justify-center px-5 py-6 sm:px-7 sm:py-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-teal">
+                    0{index + 1}
+                  </p>
+                  <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+                    {service.shortTitle}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate sm:text-base">
+                    {service.summary}
+                  </p>
+                  <span className="mt-5 text-sm font-semibold text-coral transition group-hover:translate-x-0.5">
+                    Explore →
+                  </span>
+                </div>
               </Link>
-            </h3>
-
-            <div className="mt-6 flex flex-col gap-6 lg:mt-7 lg:flex-row lg:items-center lg:gap-8">
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black/5 shadow-soft lg:aspect-[5/4] lg:w-[42%] lg:max-w-[380px]">
-                <Image
-                  src={panel.image}
-                  alt={panel.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 380px"
-                  className="object-cover object-center"
-                  priority={index === 0}
-                />
-              </div>
-
-              <div className="flex-1">
-                <p className="max-w-xl text-sm leading-relaxed text-ink/75 sm:text-base">
-                  From brand strategy to immersive digital experiences, we
-                  offer end-to-end creative solutions…
-                </p>
-
-                <ul className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2.5 sm:grid-cols-2">
-                  {featureList.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm font-medium text-ink"
-                    >
-                      <PlusIcon />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div className="flex justify-center pb-14 sm:pb-16">
-        <Button
-          href="/contact"
-          className="!rounded-full !bg-white !px-7 !py-3.5 !text-ink hover:!bg-white/90"
-        >
-          Book A Quick Call
-        </Button>
-      </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }

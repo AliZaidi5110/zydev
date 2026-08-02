@@ -4,6 +4,7 @@ import { useState, type ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
+import { siteConfig } from "@/lib/site";
 import {
   contactSchema,
   serviceOptions,
@@ -70,7 +71,7 @@ export function ContactForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`space-y-4 ${compact ? "" : "rounded-2xl border border-ink/8 bg-white p-6 shadow-soft sm:p-8"}`}
+      className="space-y-4"
       noValidate
     >
       <div className={compact ? "space-y-4" : "grid gap-4 sm:grid-cols-2"}>
@@ -139,7 +140,7 @@ export function ContactForm({
       </div>
 
       <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
-        {status === "loading" ? "Sending..." : "Get a Free Quote"}
+        {status === "loading" ? "Sending..." : siteConfig.cta.primary}
       </Button>
 
       {status === "success" ? (

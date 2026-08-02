@@ -8,86 +8,86 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "About Zydev",
   description:
-    "Meet Zydev — a UK digital services agency helping businesses grow with website design, SEO, Google Business, payments, social media, and business funding support.",
+    "Zydev is an international software agency helping organisations ship enterprise SaaS, AI automation, mobile apps, and business platforms with clarity and commercial discipline.",
   path: "/about",
 });
 
 const values = [
   {
-    title: "Clarity over jargon",
+    title: "Outcomes over tooling",
     description:
-      "You’ll always know what we’re doing, why it matters, and what success looks like.",
+      "We recommend technology only when it reduces cost, risk, or cycle time — and we measure success in business terms.",
   },
   {
-    title: "Craft with commercial intent",
+    title: "Enterprise delivery without theatre",
     description:
-      "Beautiful work that also loads fast, ranks well, and supports real enquiries.",
+      "Clear discovery, milestones, and acceptance criteria so complex programmes stay controllable for leadership.",
   },
   {
-    title: "Partnership, not dependency",
+    title: "Partnership that transfers capability",
     description:
-      "We leave you with systems and knowledge so you’re not stuck waiting on an agency for every edit.",
+      "We build with your teams, document decisions, and leave systems your organisation can own and extend.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-ink/8 py-16 sm:py-20">
+      <section className="section-pad border-b border-ink/8">
         <Container className="max-w-3xl">
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-              About {siteConfig.name}
-            </p>
-            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-              A UK digital agency built for practical growth
+            <p className="eyebrow">About {siteConfig.name}</p>
+            <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl">
+              An international software agency for operational advantage
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-slate">
-              Zydev helps ambitious small and mid-sized businesses show up
-              online with confidence. We combine design, search, local
-              visibility, payments, and social into clear programmes that
-              respect your time and budget.
+            <p className="mt-6 text-lg leading-relaxed text-slate sm:text-xl">
+              Zydev helps organisations replace fragile processes and fragmented
+              tools with enterprise software — SaaS products, custom platforms,
+              AI automation, mobile apps, portals, and cloud systems designed
+              for adoption and long-term ownership.
             </p>
           </FadeIn>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <section className="section-pad">
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <SectionHeading
-              title="Why we started Zydev"
-              description="Too many businesses were paying for websites that looked fine and underperformed — or SEO retainers that never connected to sales conversations. We built Zydev to close that gap."
+              title="Why we exist"
+              description="Too many digital programmes produce slides, prototypes, or short-lived MVPs that never become reliable operating systems. We built Zydev to close the gap between ambition and software that teams can run."
             />
-            <p className="mt-6 text-slate leading-relaxed">
-              From first discovery call to launch and beyond, we focus on the
-              fundamentals that compound: speed, structure, message-market fit,
-              and consistent execution.
+            <p className="mt-6 text-base leading-relaxed text-slate">
+              From discovery through launch, we focus on the fundamentals that
+              compound: clear product decisions, usable interfaces, dependable
+              engineering, and delivery governance stakeholders can trust.
             </p>
           </div>
-          <div className="rounded-3xl bg-ink p-8 text-white sm:p-10">
+          <div className="border border-ink/10 bg-ink p-8 text-white sm:p-10">
             <p className="font-display text-2xl font-semibold leading-snug sm:text-3xl">
-              “Ship work that a business owner can explain to their team — and
-              that Google can understand too.”
+              “Ship systems a leadership team can explain — and an operations
+              team can rely on every day.”
             </p>
-            <p className="mt-6 text-sm text-white/60">The Zydev operating principle</p>
+            <p className="mt-6 text-sm text-white/50">
+              The Zydev operating principle
+            </p>
           </div>
         </Container>
       </section>
 
-      <section className="bg-mist/60 py-16 sm:py-20">
+      <section className="section-pad border-y border-ink/8 bg-white">
         <Container>
           <SectionHeading eyebrow="Values" title="How we work with clients" />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-3 md:gap-10">
             {values.map((value) => (
               <article
                 key={value.title}
-                className="rounded-2xl border border-ink/8 bg-white p-6"
+                className="border-t border-ink/15 pt-6"
               >
-                <h2 className="font-display text-xl font-semibold text-ink">
+                <h2 className="font-display text-xl font-semibold tracking-tight text-ink">
                   {value.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+                <p className="mt-3 text-sm leading-relaxed text-slate sm:text-base">
                   {value.description}
                 </p>
               </article>
@@ -97,8 +97,8 @@ export default function AboutPage() {
       </section>
 
       <CtaBanner
-        title="Want to see if we’re a fit?"
-        description="Book a free consultation and we’ll talk honestly about scope, timing, and whether Zydev is the right partner."
+        title="Exploring a platform or AI programme?"
+        description="Start a project conversation and we’ll talk honestly about scope, sequencing, and whether Zydev is the right partner."
       />
     </>
   );

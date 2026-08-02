@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f3f6f8;
-  --mist: #e8eef2;
-  --ink: #0e1c2f;
-  --ink-soft: #17314d;
-  --slate: #5b6b7c;
-  --coral: #ff5c35;
-  --coral-dark: #e64a24;
-  --teal: #0e9488;
-  --teal-soft: #5eead4;
-  --teal-deep: #0f766e;
+  --canvas: #f6f7f9;
+  --mist: #e9edf2;
+  --ink: #0b1220;
+  --ink-soft: #162033;
+  --slate: #5a6678;
+  --line: rgba(11, 18, 32, 0.1);
+  --coral: #e85a3a;
+  --coral-dark: #cf4a2d;
+  --teal: #0f766e;
+  --teal-soft: #99f6e4;
+  --teal-deep: #115e59;
   --background: var(--canvas);
   --foreground: var(--ink);
 }
@@ -21,6 +22,7 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-slate: var(--slate);
+  --color-line: var(--line);
   --color-coral: var(--coral);
   --color-coral-dark: var(--coral-dark);
   --color-teal: var(--teal);
@@ -30,9 +32,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
-  --shadow-soft: 0 10px 30px -18px rgba(14, 28, 47, 0.28);
-  --shadow-lift: 0 22px 45px -24px rgba(14, 28, 47, 0.35);
-  --shadow-cta: 0 12px 24px -12px rgba(255, 92, 53, 0.55);
+  --shadow-soft: 0 1px 0 rgba(11, 18, 32, 0.04), 0 12px 28px -20px rgba(11, 18, 32, 0.35);
+  --shadow-lift: 0 1px 0 rgba(11, 18, 32, 0.05), 0 18px 36px -22px rgba(11, 18, 32, 0.4);
+  --shadow-cta: 0 10px 20px -12px rgba(232, 90, 58, 0.45);
 }
 
 @layer base {
@@ -40,14 +42,32 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
-    background: var(--mist);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(15, 118, 110, 0.06), transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, rgba(232, 90, 58, 0.05), transparent 50%),
+      var(--canvas);
     color: var(--ink);
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
   ::selection {
-    background: rgba(255, 92, 53, 0.2);
+    background: rgba(232, 90, 58, 0.18);
   }
 
   a {
@@ -57,7 +77,7 @@
 
 @layer components {
   .field-input {
-    @apply w-full rounded-md border border-ink/15 bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition placeholder:text-slate/60 focus:border-coral focus:ring-2 focus:ring-coral/20;
+    @apply w-full rounded-lg border border-ink/12 bg-white px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-slate/60 focus:border-coral focus:ring-2 focus:ring-coral/15;
   }
 
   .prose-zydev {
@@ -93,35 +113,36 @@
     @apply font-semibold text-coral underline;
   }
 
-  .hero-grid {
-    background-image:
-      linear-gradient(rgba(14, 28, 47, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(14, 28, 47, 0.04) 1px, transparent 1px);
-    background-size: 28px 28px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  .surface-panel {
+    @apply border border-ink/10 bg-white/80;
   }
 
-  .hero-studio-title {
-    color: transparent;
-    background-image: linear-gradient(
-      115deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(171, 245, 255, 0.9) 28%,
-      rgba(255, 184, 176, 0.95) 58%,
-      rgba(255, 220, 170, 0.95) 100%
-    );
-    background-size: 140% 140%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.35));
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
-  @keyframes shape-rotate {
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-teal;
+  }
+
+  .hero-brand {
+    color: #fff;
+    letter-spacing: -0.045em;
+    text-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  @keyframes rise-in {
     from {
-      transform: rotate(0deg);
+      opacity: 0;
+      transform: translateY(18px);
     }
     to {
-      transform: rotate(360deg);
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+
+  .animate-rise {
+    animation: rise-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }

@@ -1,69 +1,72 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { FaqSchema } from "@/components/seo/JsonLd";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { DesignShowcase } from "@/components/sections/DesignShowcase";
+import { EngineeringExpertise } from "@/components/sections/EngineeringExpertise";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesShowcase } from "@/components/sections/ServicesShowcase";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
+import { ClientWorkStrip } from "@/components/ui/ClientWorkStrip";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: `${siteConfig.name} | Website Design, SEO & Digital Services UK`,
+  title: `${siteConfig.name} | Enterprise Software, AI & Digital Platforms`,
   description:
-    "Zydev helps UK businesses grow with website design & development, SEO, Google Business Profile optimisation, card payments, social media management, and business funding support. Get a free quote today.",
+    "Zydev is an international software agency building enterprise SaaS, custom business platforms, AI automation, mobile apps, dashboards, and cloud systems that improve operations and revenue.",
   path: "/",
 });
 
 const homeFaqs = [
   {
-    question: "What digital services does Zydev offer in the UK?",
+    question: "What does Zydev build?",
     answer:
-      "Zydev provides website design & development, SEO services, Google Business Profile optimisation, card payment integration, social media management, and business funding support for UK businesses.",
+      "We design and deliver enterprise SaaS, custom business platforms, AI automation, mobile apps, CRM/ERP and portal systems, dashboards, APIs, and cloud foundations — with product strategy and UX when leadership needs clarity before build.",
   },
   {
-    question: "Do you work with businesses outside London?",
+    question: "Do you work with international clients?",
     answer:
-      "Yes. We work UK-wide. Most projects run remotely with clear milestones, shared updates, and video calls.",
+      "Yes. We work with organisations across the UK and internationally. Engagements run remotely with clear governance, milestones, and stakeholder cadence.",
   },
   {
-    question: "How quickly can a website or SEO project start?",
+    question: "How do enterprise engagements typically start?",
     answer:
-      "Discovery calls are usually available within a few working days. Many website projects kick off within one to two weeks of agreement.",
+      "Most programmes begin with a discovery or strategy sprint to define outcomes, scope, risks, and a phased delivery plan before larger investment.",
   },
   {
-    question: "Is the consultation free?",
+    question: "Can you partner with our internal teams?",
     answer:
-      "Yes. Book a free consultation and we’ll discuss goals, scope, and a practical path forward — with no obligation.",
+      "Yes. We embed alongside product, engineering, and operations teams, or deliver end-to-end when you need an external build partner.",
   },
 ];
 
 const trustPoints = [
   {
-    title: "SEO built into every build",
+    title: "Business outcomes first",
     description:
-      "Metadata, schema, performance, and internal linking ship with the site — not as an afterthought.",
+      "We frame every release around operational efficiency, revenue enablement, or risk reduction — not feature volume.",
   },
   {
-    title: "Outcomes over vanity metrics",
+    title: "Enterprise delivery discipline",
     description:
-      "We prioritise enquiries, bookings, and revenue signals you can measure.",
+      "Discovery, milestones, acceptance criteria, and stakeholder visibility keep complex programmes controllable.",
   },
   {
-    title: "Mobile-first delivery",
+    title: "Systems people actually use",
     description:
-      "Fast, accessible experiences that work on phones first — where most UK traffic starts.",
+      "Product and UX decisions are grounded in real workflows so software gets adopted after launch.",
   },
 ];
 
 export default function HomePage() {
-  const featured = getFeaturedCaseStudies(3);
+  const featured = getFeaturedCaseStudies(4);
 
   return (
     <>
@@ -75,25 +78,29 @@ export default function HomePage() {
 
       <ServicesShowcase />
 
+      <EngineeringExpertise compact />
+
+      <ProcessSection />
+
       <section
         aria-labelledby="why-zydev-heading"
-        className="bg-mist py-10 sm:py-12"
+        className="section-pad bg-canvas"
       >
         <Container>
           <SectionHeading
             id="why-zydev-heading"
             eyebrow="Why Zydev"
-            title="A digital partner built for search and sales"
-            description="We design for people and structure for search engines — so your investment keeps working after launch."
+            title="A software partner for serious operational change"
+            description="We help organisations replace fragile processes and fragmented tools with platforms that leadership can trust and teams can run."
           />
-          <div className="mt-6 grid gap-3 sm:mt-7 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-3 md:gap-10">
             {trustPoints.map((point, index) => (
               <FadeIn key={point.title} delay={index * 0.04}>
-                <article className="h-full border-l-2 border-coral bg-white px-4 py-4 sm:px-5">
-                  <h3 className="font-display text-base font-semibold text-ink sm:text-lg">
+                <article className="h-full border-t border-ink/15 pt-6">
+                  <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
                     {point.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate">
+                  <p className="mt-3 text-sm leading-relaxed text-slate sm:text-base">
                     {point.description}
                   </p>
                 </article>
@@ -103,23 +110,23 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-10 sm:py-12">
+      <section className="section-pad border-y border-ink/8 bg-white">
         <Container>
-          <TestimonialCarousel />
+          <ClientWorkStrip />
         </Container>
       </section>
 
       <section
         aria-labelledby="case-studies-heading"
-        className="border-t border-ink/8 bg-mist/70 py-10 sm:py-12"
+        className="section-pad bg-canvas"
       >
         <Container>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               id="case-studies-heading"
               eyebrow="Case studies"
-              title="Results UK clients can point to"
-              description="Website, SEO, payments, and social projects across healthcare, retail, and creative services."
+              title="Selected product and platform work"
+              description="Live engagements across PropTech, healthcare aesthetics, salon retail, and UK business services."
             />
             <Button
               href="/case-studies"
@@ -129,31 +136,33 @@ export default function HomePage() {
               View all case studies
             </Button>
           </div>
-          <div className="mt-6 grid gap-4 sm:mt-7 lg:grid-cols-3">
+          <div className="mt-12 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((study, index) => (
               <FadeIn key={study.slug} delay={index * 0.04}>
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-xl border border-ink/10 bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift"
+                  className="group flex h-full flex-col bg-white transition hover:bg-mist/40"
                 >
-                  <div
-                    className={`min-h-28 bg-gradient-to-br ${study.coverGradient} p-4 text-white`}
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.14em] text-white/70">
+                  <div className="relative min-h-40 overflow-hidden bg-mist">
+                    <Image
+                      src={study.coverImage}
+                      alt={`${study.client} project cover`}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="text-[11px] uppercase tracking-[0.14em] text-slate">
                       {study.industry}
                     </p>
-                    <p className="mt-5 font-display text-xl font-semibold">
+                    <h3 className="mt-2 font-display text-lg font-semibold tracking-tight text-ink">
                       {study.client}
-                    </p>
-                  </div>
-                  <div className="flex flex-1 flex-col p-4">
-                    <h3 className="font-display text-base font-semibold text-ink group-hover:text-coral">
-                      {study.title}
                     </h3>
-                    <p className="mt-2 flex-1 text-sm text-slate">
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-slate">
                       {study.summary}
                     </p>
-                    <span className="mt-3 text-sm font-semibold text-coral">
+                    <span className="mt-5 text-sm font-semibold text-coral">
                       Read case study →
                     </span>
                   </div>
@@ -166,7 +175,7 @@ export default function HomePage() {
 
       <section
         aria-labelledby="faq-heading"
-        className="bg-white py-10 sm:py-12"
+        className="section-pad border-t border-ink/8 bg-white"
       >
         <Container className="max-w-3xl">
           <SectionHeading
@@ -175,7 +184,7 @@ export default function HomePage() {
             title="Common questions about working with Zydev"
             align="center"
           />
-          <div className="mt-6 sm:mt-7">
+          <div className="mt-10">
             <FaqAccordion faqs={homeFaqs} />
           </div>
         </Container>

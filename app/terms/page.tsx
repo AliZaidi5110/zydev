@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Terms of Service",
-  description: `Terms governing use of the ${siteConfig.name} website and engagement for digital services.`,
+  description: `Terms governing use of the ${siteConfig.name} website and engagement for software and digital transformation services.`,
   path: "/terms",
 });
 

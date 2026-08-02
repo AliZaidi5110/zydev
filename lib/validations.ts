@@ -13,11 +13,11 @@ export const contactSchema = z.object({
 export type ContactFormValues = z.infer<typeof contactSchema>;
 
 export const serviceOptions = [
-  "Website Design & Development",
-  "SEO Services",
-  "Google My Business",
-  "Card Payment Integration",
-  "Social Media Management",
-  "Business Funding",
+  "Custom Software & SaaS",
+  "AI Solutions & Automation",
+  "CRM, ERP, Portals & Dashboards",
+  "Mobile Applications",
+  "Cloud, APIs & DevOps",
+  "Product Strategy & Digital Transformation",
   "Not sure yet",
 ] as const;

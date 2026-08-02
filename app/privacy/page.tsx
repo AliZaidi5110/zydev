@@ -19,8 +19,9 @@ export default function PrivacyPage() {
 
         <h2>Who we are</h2>
         <p>
-          {siteConfig.legalName} (“Zydev”, “we”, “us”) provides digital services
-          to UK businesses. Contact:{" "}
+          {siteConfig.legalName} (“Zydev”, “we”, “us”) provides software design,
+          engineering, and digital transformation services to organisations
+          worldwide. Contact:{" "}
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
 

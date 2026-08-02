@@ -8,34 +8,40 @@ type CtaBannerProps = {
 };
 
 export function CtaBanner({
-  title = "Ready for a sharper digital presence?",
-  description = "Tell us your goals. We’ll reply within one business day with clear next steps.",
+  title = "Ready to build software that changes how you operate?",
+  description = "Tell us the outcome you need. We’ll reply within one business day with a practical next step.",
 }: CtaBannerProps) {
   return (
-    <section className="bg-mist/80 py-10 sm:py-12">
+    <section className="section-pad bg-canvas">
       <Container>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-ink via-ink-soft to-teal-deep px-5 py-8 text-white sm:px-10 sm:py-10">
+        <div className="relative overflow-hidden border border-ink/10 bg-ink px-6 py-12 text-white sm:px-10 sm:py-14 lg:px-14">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-10 top-0 h-36 w-36 rounded-full bg-coral/25 blur-3xl"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(232,90,58,0.18),transparent_45%),radial-gradient(ellipse_at_bottom_left,rgba(15,118,110,0.16),transparent_40%)]"
           />
-          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
-              <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-soft">
+                Next step
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
                 {title}
               </h2>
-              <p className="mt-2 text-sm text-white/70 sm:text-base">
+              <p className="mt-4 text-base text-white/65 sm:text-lg">
                 {description}
               </p>
             </div>
-            <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
-              <Button href="/contact" className="w-full sm:w-auto">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <Button
+                href="/contact"
+                className="w-full !bg-white !text-ink hover:!bg-white/90 sm:w-auto"
+              >
                 {siteConfig.cta.primary}
               </Button>
               <Button
-                href="/contact"
+                href="/services"
                 variant="secondary"
-                className="w-full !border-white/20 !bg-white/10 !text-white hover:!bg-white/15 sm:w-auto"
+                className="w-full !border-white/25 !text-white hover:!border-white/50 hover:!bg-white/10 sm:w-auto"
               >
                 {siteConfig.cta.secondary}
               </Button>

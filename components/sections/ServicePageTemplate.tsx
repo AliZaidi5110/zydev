@@ -37,10 +37,10 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       <section className="relative overflow-hidden border-b border-ink/8">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,92,53,0.12),_transparent_45%),radial-gradient(ellipse_at_bottom_left,_rgba(14,148,136,0.12),_transparent_40%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(232,90,58,0.08),_transparent_45%),radial-gradient(ellipse_at_bottom_left,_rgba(15,118,110,0.08),_transparent_40%)]"
         />
-        <Container className="relative py-16 sm:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate">
+        <Container className="relative section-pad !py-14 sm:!py-20">
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
                 <Link href="/" className="hover:text-coral">
@@ -54,24 +54,24 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                 </Link>
               </li>
               <li aria-hidden>/</li>
-              <li className="font-medium text-ink">{service.shortTitle}</li>
+              <li className="font-medium text-ink" aria-current="page">
+                {service.shortTitle}
+              </li>
             </ol>
           </nav>
           <div
             className={
               service.image
-                ? "grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]"
+                ? "grid items-center gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14"
                 : undefined
             }
           >
             <FadeIn>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-                {siteConfig.name} services
-              </p>
-              <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+              <p className="eyebrow">{siteConfig.name} services</p>
+              <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
                 {service.title}
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate">
                 {service.intro}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
             </FadeIn>
             {service.image ? (
               <FadeIn delay={0.1} className="relative">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-mist shadow-lift sm:aspect-[16/11]">
+                <div className="relative aspect-[4/3] overflow-hidden border border-ink/10 bg-mist sm:aspect-[16/11]">
                   <Image
                     src={service.image}
                     alt={service.imageAlt ?? service.title}
@@ -99,21 +99,21 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="section-pad">
         <Container>
           <SectionHeading
             eyebrow="Benefits"
             title="What you get with Zydev"
             description="Practical outcomes — not slide decks. Each engagement is scoped around commercial goals."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
             {service.benefits.map((benefit, index) => (
-              <FadeIn key={benefit.title} delay={index * 0.05}>
-                <article className="h-full rounded-xl border border-ink/8 bg-white/70 p-6">
+              <FadeIn key={benefit.title} delay={index * 0.04}>
+                <article className="h-full border-t border-ink/15 pt-5">
                   <h3 className="font-display text-lg font-semibold text-ink">
                     {benefit.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate">
+                  <p className="mt-3 text-sm leading-relaxed text-slate">
                     {benefit.description}
                   </p>
                 </article>
@@ -123,18 +123,18 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="bg-mist/70 py-16 sm:py-20">
+      <section className="section-pad border-y border-ink/8 bg-white">
         <Container>
           <SectionHeading
             eyebrow="Process"
             title="How it works"
-            description="A clear path from first call to launch — with communication you can rely on."
+            description="A clear path from first conversation to launch — with communication you can rely on."
           />
-          <ol className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {service.process.map((item, index) => (
-              <FadeIn key={item.step} delay={index * 0.05}>
-                <li className="h-full rounded-xl bg-white p-6 shadow-soft">
-                  <span className="font-display text-sm font-bold text-coral">
+              <FadeIn key={item.step} delay={index * 0.04}>
+                <li className="h-full border-t border-ink/15 pt-5">
+                  <span className="font-display text-sm font-semibold tracking-[0.16em] text-coral">
                     {item.step}
                   </span>
                   <h3 className="mt-3 font-display text-xl font-semibold text-ink">
@@ -150,23 +150,20 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="section-pad">
         <Container>
           <SectionHeading
             eyebrow="Pricing snapshot"
             title="Transparent starting points"
-            description="Exact quotes depend on scope. These ranges help you plan — and our free consultation removes the guesswork."
+            description="Exact quotes depend on scope. These ranges help you plan — we refine after discovery."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 md:grid-cols-3">
             {service.pricingSnapshot.map((tier) => (
-              <article
-                key={tier.name}
-                className="rounded-xl border border-ink/8 bg-white p-6"
-              >
-                <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate">
+              <article key={tier.name} className="bg-white p-6 sm:p-7">
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
                   {tier.name}
                 </h3>
-                <p className="mt-3 font-display text-3xl font-semibold text-ink">
+                <p className="mt-4 font-display text-3xl font-semibold text-ink">
                   {tier.price}
                 </p>
                 <p className="mt-2 text-sm text-slate">{tier.note}</p>
@@ -175,7 +172,10 @@ export function ServicePageTemplate({ service }: { service: Service }) {
           </div>
           <p className="mt-6 text-sm text-slate">
             Prefer the full picture? See{" "}
-            <Link href="/pricing" className="font-semibold text-coral hover:underline">
+            <Link
+              href="/pricing"
+              className="font-semibold text-coral hover:underline"
+            >
               Zydev pricing
             </Link>{" "}
             or request a tailored quote below.
@@ -183,8 +183,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section className="bg-mist/70 py-16 sm:py-20">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+      <section className="section-pad border-y border-ink/8 bg-white">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-16">
           <div>
             <SectionHeading
               eyebrow="FAQs"
@@ -200,12 +200,12 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               title="Services that pair well"
               description="Most clients combine two or three capabilities for stronger results."
             />
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 space-y-px overflow-hidden border border-ink/10 bg-ink/10">
               {related.map((item) => (
                 <li key={item.slug}>
                   <Link
                     href={`/services/${item.slug}`}
-                    className="block rounded-xl border border-ink/8 bg-white px-5 py-4 transition hover:border-coral/30"
+                    className="block bg-white px-5 py-4 transition hover:bg-canvas"
                   >
                     <span className="font-semibold text-ink">{item.title}</span>
                     <span className="mt-1 block text-sm text-slate">
@@ -217,7 +217,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               <li>
                 <Link
                   href="/pricing"
-                  className="block rounded-xl border border-dashed border-ink/15 bg-white/50 px-5 py-4 font-semibold text-coral"
+                  className="block bg-canvas px-5 py-4 font-semibold text-coral"
                 >
                   Compare packages on the pricing page →
                 </Link>
@@ -227,16 +227,18 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Container>
       </section>
 
-      <section id="quote" className="py-16 sm:py-20">
-        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section id="quote" className="section-pad">
+        <Container className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-14">
           <div>
             <SectionHeading
               eyebrow="Next step"
-              title="Get a free quote"
-              description="Share a little context and we’ll come back with clear recommendations and pricing."
+              title="Start a project conversation"
+              description="Share a little context and we’ll come back with clear recommendations and a scoped next step."
             />
           </div>
-          <ContactForm defaultService={service.title} />
+          <div className="border border-ink/10 bg-white p-5 sm:p-8">
+            <ContactForm defaultService={service.title} />
+          </div>
         </Container>
       </section>
 

@@ -7,51 +7,61 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Contact Zydev",
   description:
-    "Get a free quote or book a free consultation with Zydev. Tell us about your website, SEO, local, payments, or social goals.",
+    "Start a project or book a discovery call with Zydev. Tell us about your SaaS, platform, AI, mobile, or transformation goals.",
   path: "/contact",
 });
 
 export default function ContactPage() {
   return (
-    <section className="py-16 sm:py-20">
-      <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+    <section className="section-pad">
+      <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <SectionHeading
             eyebrow="Contact"
-            title="Let’s talk about your next move"
-            description="Share a little context and we’ll reply within one business day with practical next steps."
+            title="Tell us what needs to change"
+            description="Share the outcome you need — operations, revenue, support, or product — and we’ll reply within one business day."
             as="h1"
           />
-          <dl className="mt-10 space-y-5 text-sm">
+          <dl className="mt-10 space-y-6 border-t border-ink/10 pt-8 text-sm">
             <div>
-              <dt className="font-semibold text-ink">Email</dt>
-              <dd className="mt-1">
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                Email
+              </dt>
+              <dd className="mt-2">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-slate hover:text-coral"
+                  className="text-base font-medium text-ink hover:text-coral"
                 >
                   {siteConfig.email}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="font-semibold text-ink">Phone</dt>
-              <dd className="mt-1">
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                Phone
+              </dt>
+              <dd className="mt-2">
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="text-slate hover:text-coral"
+                  className="text-base font-medium text-ink hover:text-coral"
                 >
                   {siteConfig.phone}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="font-semibold text-ink">Area served</dt>
-              <dd className="mt-1 text-slate">United Kingdom (remote-first)</dd>
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                Engagement model
+              </dt>
+              <dd className="mt-2 text-base text-slate">
+                UK-based, serving clients worldwide (remote-first)
+              </dd>
             </div>
           </dl>
         </div>
-        <ContactForm />
+        <div className="border border-ink/10 bg-white p-5 sm:p-8">
+          <ContactForm />
+        </div>
       </Container>
     </section>
   );

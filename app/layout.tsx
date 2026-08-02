@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import {
-  LocalBusinessSchema,
   OrganizationSchema,
 } from "@/components/seo/JsonLd";
 import { CookieConsent } from "@/components/ui/CookieConsent";
@@ -27,7 +26,7 @@ const body = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: `${siteConfig.name} | Website Design, SEO & Digital Services UK`,
+    title: `${siteConfig.name} | Enterprise Software, AI & Digital Platforms`,
     description: siteConfig.description,
     path: "/",
   }),
@@ -35,12 +34,14 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name }],
   keywords: [
-    "website design UK",
-    "SEO services UK",
-    "Google My Business optimisation",
-    "card payment integration",
-    "social media management",
-    "business funding UK",
+    "enterprise software agency",
+    "custom SaaS development",
+    "AI automation",
+    "AI agents and chatbots",
+    "CRM ERP dashboards",
+    "mobile app development",
+    "cloud DevOps",
+    "digital transformation",
     "Zydev",
   ],
 };
@@ -54,7 +55,7 @@ export default function RootLayout({
     <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         <OrganizationSchema />
-        <LocalBusinessSchema />
+        {/* LocalBusiness removed in enterprise rebrand — Organisation schema remains */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow-lift"

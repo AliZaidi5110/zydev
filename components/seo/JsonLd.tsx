@@ -22,11 +22,26 @@ export function OrganizationSchema() {
         "@type": "Organization",
         name: siteConfig.name,
         legalName: siteConfig.legalName,
+        description: siteConfig.description,
         url: siteConfig.url,
         email: siteConfig.email,
         telephone: siteConfig.phone,
+        areaServed: siteConfig.areaServed,
         sameAs: Object.values(siteConfig.social),
         logo: `${siteConfig.url}/logo.svg`,
+        knowsAbout: [
+          "Enterprise SaaS",
+          "Custom business platforms",
+          "AI automation",
+          "Mobile applications",
+          "CRM and ERP systems",
+          "React and Next.js",
+          "Node.js and NestJS",
+          "PostgreSQL and Prisma",
+          "Stripe and cloud integrations",
+          "AWS Docker Vercel",
+          "Digital transformation",
+        ],
       }}
     />
   );
