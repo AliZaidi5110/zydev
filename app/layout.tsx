@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { OrganizationSchema } from "@/components/seo/JsonLd";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { FloatingActionPill } from "@/components/ui/FloatingActionPill";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -64,9 +65,11 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingActionPill />
         <CookieConsent />
         <AnalyticsGate />
       </body>
     </html>
   );
 }
+

@@ -1,10 +1,14 @@
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { FaqSchema } from "@/components/seo/JsonLd";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { DesignShowcase } from "@/components/sections/DesignShowcase";
+import { ServicesShowcase } from "@/components/sections/ServicesShowcase";
+import { EngineeringExpertise } from "@/components/sections/EngineeringExpertise";
+import { AiSolutionsSection } from "@/components/sections/AiSolutionsSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -14,52 +18,13 @@ import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-const DesignShowcase = dynamic(
-  () =>
-    import("@/components/sections/DesignShowcase").then(
-      (mod) => mod.DesignShowcase,
-    ),
-  { ssr: true },
-);
-
-const ServicesShowcase = dynamic(
-  () =>
-    import("@/components/sections/ServicesShowcase").then(
-      (mod) => mod.ServicesShowcase,
-    ),
-  { ssr: true },
-);
-
-const EngineeringExpertise = dynamic(
-  () =>
-    import("@/components/sections/EngineeringExpertise").then(
-      (mod) => mod.EngineeringExpertise,
-    ),
-  { ssr: true },
-);
-
-const AiSolutionsSection = dynamic(
-  () =>
-    import("@/components/sections/AiSolutionsSection").then(
-      (mod) => mod.AiSolutionsSection,
-    ),
-  { ssr: true },
-);
-
-const ProcessSection = dynamic(
-  () =>
-    import("@/components/sections/ProcessSection").then(
-      (mod) => mod.ProcessSection,
-    ),
-  { ssr: true },
-);
-
 export const metadata = buildMetadata({
   title: `${siteConfig.name} | Enterprise Software, AI & Digital Platforms`,
   description:
     "Zydev is an international software agency building enterprise SaaS, custom business platforms, AI automation, mobile apps, dashboards, and cloud systems that improve operations and revenue.",
   path: "/",
 });
+
 
 const homeFaqs = [
   {

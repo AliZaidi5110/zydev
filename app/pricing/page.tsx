@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { ProjectEstimator } from "@/components/sections/ProjectEstimator";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -28,7 +29,11 @@ export default function PricingPage() {
         </Container>
       </section>
 
+      {/* Interactive Project Scope & Timeline Estimator */}
+      <ProjectEstimator />
+
       <section className="section-pad">
+
         <Container className="space-y-6">
           {services.map((service) => (
             <article

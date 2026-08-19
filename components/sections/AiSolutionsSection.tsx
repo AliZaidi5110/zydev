@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AiPlaygroundDemo } from "@/components/sections/AiPlaygroundDemo";
 import { aiSolutions } from "@/lib/ai-solutions";
 
 type AiSolutionsSectionProps = {
@@ -37,6 +38,11 @@ export function AiSolutionsSection({
               Explore AI solutions
             </Button>
           ) : null}
+        </div>
+
+        {/* Interactive AI Playground Simulator */}
+        <div className="mt-10">
+          <AiPlaygroundDemo />
         </div>
 
         <div className="mt-12 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
@@ -83,3 +89,4 @@ export function AiSolutionsSection({
     </section>
   );
 }
+
