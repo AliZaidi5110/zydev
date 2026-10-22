@@ -4,7 +4,7 @@ export const siteConfig = {
   legalName: "Zevriyon Technologies Ltd",
   tagline: "Limitless Possibilities — Enterprise Software & AI Systems",
   description:
-    "Zevriyon Technologies is an international software and AI engineering company building enterprise SaaS, custom platforms, AI automation, mobile apps, dashboards, and cloud systems that drive operational growth.",
+    "Zevriyon Technologies is an international technology and outbound sales company providing enterprise SaaS, custom platforms, AI automation, B2B telemarketing for UK POS services, mobile apps, and cloud systems that drive revenue growth.",
   url: "https://www.zevriyon.com",
   locale: "en_GB",
   phone: "+44 20 0000 0000",
@@ -46,6 +46,11 @@ export const mainNav: NavItem[] = [
         description: "Platforms built around how your business actually runs.",
       },
       {
+        label: "B2B Telemarketing & UK POS",
+        href: "/services/telemarketing-pos",
+        description: "Dedicated UK outbound teams selling POS & payment systems.",
+      },
+      {
         label: "AI Solutions",
         href: "/services/ai-solutions",
         description: "Agents, chatbots, and automation that reduce manual work.",
@@ -83,6 +88,7 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   services: [
     { label: "Custom Software & SaaS", href: "/services/custom-software" },
+    { label: "B2B Telemarketing & UK POS", href: "/services/telemarketing-pos" },
     { label: "AI Solutions", href: "/ai-solutions" },
     { label: "Enterprise Systems", href: "/services/enterprise-systems" },
     { label: "Mobile Applications", href: "/services/mobile-apps" },

@@ -28,9 +28,14 @@ export const metadata = buildMetadata({
 
 const homeFaqs = [
   {
-    question: `What does ${siteConfig.shortName} build?`,
+    question: `What does ${siteConfig.shortName} offer?`,
     answer:
-      "We design and deliver enterprise SaaS, custom business platforms, AI automation, mobile apps, CRM/ERP and portal systems, dashboards, APIs, and cloud foundations — with product strategy and UX when leadership needs clarity before build.",
+      "We deliver enterprise SaaS products, custom business platforms, AI automation, and dedicated B2B telemarketing teams selling modern POS and payment systems to UK merchants — backed by cloud foundations and product strategy.",
+  },
+  {
+    question: "Do you sell POS and payment solutions in the UK?",
+    answer:
+      "Yes. Our specialized UK telemarketing and merchant sales teams conduct direct outbound campaigns for POS providers, card machine vendors, and payment processors — generating qualified merchant meetings, statement rate reviews, and terminal upgrades.",
   },
   {
     question: "Do you work with international clients?",

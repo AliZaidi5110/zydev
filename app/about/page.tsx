@@ -41,10 +41,11 @@ export default function AboutPage() {
               An international software agency for operational advantage
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate sm:text-xl">
-              {siteConfig.name} helps organisations replace fragile processes and fragmented
-              tools with enterprise software — SaaS products, custom platforms,
-              AI automation, mobile apps, portals, and cloud systems designed
-              for adoption and long-term ownership.
+              {siteConfig.name} drives commercial growth through enterprise
+              software, AI automation, and dedicated B2B telemarketing —
+              empowering businesses with bespoke digital platforms and executing
+              direct UK merchant acquisition for modern POS and card payment
+              solutions.
             </p>
           </FadeIn>
         </Container>

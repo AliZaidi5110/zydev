@@ -15,7 +15,8 @@ export type Service = {
     | "systems"
     | "mobile"
     | "cloud"
-    | "strategy";
+    | "strategy"
+    | "telemarketing";
   image?: string;
   imageAlt?: string;
   benefits: { title: string; description: string }[];
@@ -679,6 +680,120 @@ export const services: Service[] = [
       },
     ],
     relatedSlugs: ["custom-software", "ai-solutions", "mobile-apps"],
+  },
+  {
+    slug: "telemarketing-pos",
+    title: "B2B Telemarketing & UK POS Solutions",
+    shortTitle: "Telemarketing & POS",
+    primaryKeyword: "B2B telemarketing UK POS card machines",
+    metaTitle: "B2B Telemarketing & UK POS Solutions | Zevriyon Technologies",
+    metaDescription:
+      "Zevriyon Technologies delivers high-impact B2B telemarketing campaigns across the UK, specializing in outbound POS systems, smart card terminals, and merchant payment solutions.",
+    intro:
+      "Acquiring merchants in the UK payments space takes sharp outbound discipline, deep product knowledge, and resilient compliance. Zevriyon runs high-performance B2B telemarketing campaigns that connect with UK retail, hospitality, and trade merchants to switch payment providers, upgrade card machines, and deploy modern Point of Sale (POS) infrastructure.",
+    summary:
+      "Dedicated UK telemarketing teams driving direct sales, merchant acquisition, and appointment setting for POS and card payment terminals.",
+    icon: "telemarketing",
+    image: "/images/card-payments.jpg",
+    imageAlt: "UK card machines, POS terminals, and merchant payment systems",
+    benefits: [
+      {
+        title: "Merchant Acquisition at Scale",
+        description:
+          "Trained outbound telemarketing specialists engaging independent retailers, hospitality venues, and multi-site operators across England, Scotland, Wales, and Northern Ireland.",
+      },
+      {
+        title: "POS & Card Machine Expertise",
+        description:
+          "Our callers understand terminal hardware, transaction fee structures, interchange savings, next-day settlement, and EPOS integrations to overcome objections with confidence.",
+      },
+      {
+        title: "Qualified Appointments & Live Transfers",
+        description:
+          "We deliver verified decision-maker appointments or hot live-transfers directly to your closing teams — with call recordings and structured CRM notes.",
+      },
+      {
+        title: "Rates Comparison & Switch Campaigns",
+        description:
+          "We obtain merchant statements, calculate real-world processing fee savings, and present compelling switch proposals that deliver industry-leading close rates.",
+      },
+      {
+        title: "Strict TPS & UK Regulatory Compliance",
+        description:
+          "Full adherence to UK regulations, regular TPS and CTPS screening, secure data handling, and transparent merchant contracts.",
+      },
+      {
+        title: "Tech-Enabled Dialing & AI Optimization",
+        description:
+          "Powered by cloud dialers, automated CRM synchronization, and AI speech analysis to continuously refine scripts and maximize conversion rates.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Audience & Data Profiling",
+        description:
+          "We segment high-converting UK merchant categories — restaurants, pubs, convenience grocers, salons, professional trade — ensuring TPS-screened clean data.",
+      },
+      {
+        step: "02",
+        title: "Value Proposition & Scripting",
+        description:
+          "Crafting high-converting pitch angles focused on zero monthly rental, lower transaction rates, faster payouts, or modern touch EPOS capabilities.",
+      },
+      {
+        step: "03",
+        title: "Outbound Dialing & Rate Audits",
+        description:
+          "Our UK-focused agents reach business owners, benchmark current merchant service charges, and position your POS solution.",
+      },
+      {
+        step: "04",
+        title: "Handover & Deal Support",
+        description:
+          "Delivering verified meetings, statement uploads, and qualified pipeline directly into your sales workflow with complete attribution.",
+      },
+    ],
+    pricingSnapshot: [
+      {
+        name: "Pilot Campaign",
+        price: "£2,500/mo",
+        note: "Dedicated 1-seat outbound campaign, script testing, target data list, weekly performance reporting.",
+      },
+      {
+        name: "Growth Squad",
+        price: "£4,800/mo",
+        note: "2-3 dedicated telemarketers, merchant statement collection, appointment setting, full CRM integration.",
+      },
+      {
+        name: "Enterprise Scale",
+        price: "Tailored",
+        note: "Multi-seat outbound/inbound contact team, live transfer desk, custom POS onboarding workflows.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which UK industries do you target for POS sales?",
+        answer:
+          "We target high-volume transaction sectors including restaurants, cafes, pubs, convenience grocers, hair & beauty salons, dry cleaners, auto garages, and specialist retailers across the UK.",
+      },
+      {
+        question: "Can your team collect merchant processing statements?",
+        answer:
+          "Yes. Collecting recent merchant processing statements is a core part of our workflow so your pricing desk can calculate exact transaction fee savings before the final sales call.",
+      },
+      {
+        question: "Are all outbound calls TPS and Ofcom compliant?",
+        answer:
+          "Strictly yes. All telephone lists are screened against the Telephone Preference Service (TPS) and Corporate TPS (CTPS), with full call recording and GDPR compliance.",
+      },
+      {
+        question: "Do you provide both appointment setting and direct sales?",
+        answer:
+          "We support both models: delivering qualified meetings with business owners, or managing the full sales cycle through to merchant agreement signing, depending on your product requirements.",
+      },
+    ],
+    relatedSlugs: ["custom-software", "ai-solutions", "enterprise-systems"],
   },
 ];
 

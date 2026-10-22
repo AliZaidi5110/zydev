@@ -12,6 +12,8 @@ const paths: Record<Service["icon"], string> = {
     "M7 18h10a4 4 0 0 0 .4-8 5.5 5.5 0 0 0-10.5-1.5A3.5 3.5 0 0 0 7 18Z",
   strategy:
     "M4 19h16M7 16V9m5 7V5m5 11v-4",
+  telemarketing:
+    "M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z",
 };
 
 export function ServiceIcon({

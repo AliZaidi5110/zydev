@@ -32,9 +32,9 @@ export function HomeHero() {
         <div className="mt-8 grid items-end gap-8 sm:mt-10 lg:grid-cols-[1fr_auto] lg:gap-12">
           <FadeIn delay={0.12} className="max-w-md">
             <p className="text-sm leading-relaxed text-white/80 sm:text-base">
-              {siteConfig.name} builds enterprise SaaS, AI systems, and business
-              platforms — beautiful product experiences that help organisations
-              operate and grow with confidence.
+              {siteConfig.name} delivers enterprise SaaS, AI systems, and dedicated
+              B2B telemarketing teams selling modern POS and payment solutions
+              to merchants across the UK.
             </p>
             <Link
               href="/case-studies"

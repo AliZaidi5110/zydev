@@ -60,6 +60,22 @@ const servicePanels = [
     ],
   },
   {
+    title: "B2B Telemarketing & UK POS Sales",
+    href: "/services/telemarketing-pos",
+    bg: "#a7f3d0",
+    image: "/images/card-payments.jpg",
+    imageAlt: "UK card machines, POS terminals, and merchant payment systems",
+    summary:
+      "Dedicated outbound telemarketing teams driving merchant acquisition, card terminal sales, and EPOS upgrades across the UK.",
+    features: [
+      "Outbound merchant acquisition",
+      "EPOS & smart terminal sales",
+      "UK hospitality & retail outreach",
+      "Merchant rates comparison & switching",
+      "TPS-compliant verified appointments",
+    ],
+  },
+  {
     title: "Product Strategy & Digital Transformation",
     href: "/services/product-strategy",
     bg: "#fbe8a4",
