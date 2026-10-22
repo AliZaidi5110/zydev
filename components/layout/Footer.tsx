@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -12,9 +13,15 @@ export function Footer() {
             <Link
               href="/"
               aria-label={`${siteConfig.name} home`}
-              className="font-display text-3xl font-bold tracking-tight"
+              className="inline-block transition-opacity hover:opacity-90"
             >
-              Zy<span className="text-coral">dev</span>
+              <Image
+                src="/images/zevriyon-logo-white.svg"
+                alt={siteConfig.name}
+                width={210}
+                height={58}
+                className="h-9 sm:h-10 w-auto object-contain"
+              />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
               {siteConfig.tagline}. We partner with organisations that need

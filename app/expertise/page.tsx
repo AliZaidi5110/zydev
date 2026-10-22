@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Engineering Expertise",
   description:
-    "Zydev engineering expertise across React, Next.js, Node.js, NestJS, PostgreSQL, Prisma, Stripe, OpenAI, Anthropic, AWS, Docker, and Vercel — explained through business outcomes.",
+    "Zevriyon Technologies engineering expertise across React, Next.js, Node.js, NestJS, PostgreSQL, Prisma, Stripe, OpenAI, Anthropic, AWS, Docker, and Vercel — explained through business outcomes.",
   path: "/expertise",
 });
 
@@ -22,7 +22,7 @@ export default function ExpertisePage() {
             <SectionHeading
               eyebrow="Engineering"
               title="Technology choices that protect commercial outcomes"
-              description="Modern stacks only matter when they reduce risk, cycle time, or operating cost. Here is how Zydev uses frontend, backend, data, integrations, and cloud tools in real delivery."
+              description="Modern stacks only matter when they reduce risk, cycle time, or operating cost. Here is how Zevriyon Technologies uses frontend, backend, data, integrations, and cloud tools in real delivery."
               as="h1"
             />
           </FadeIn>

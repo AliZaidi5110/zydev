@@ -103,7 +103,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         <Container>
           <SectionHeading
             eyebrow="Benefits"
-            title="What you get with Zydev"
+            title={`What you get with ${siteConfig.shortName}`}
             description="Practical outcomes — not slide decks. Each engagement is scoped around commercial goals."
           />
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
@@ -176,7 +176,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               href="/pricing"
               className="font-semibold text-coral hover:underline"
             >
-              Zydev pricing
+              {siteConfig.shortName} pricing
             </Link>{" "}
             or request a tailored quote below.
           </p>

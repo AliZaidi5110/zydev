@@ -21,14 +21,14 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: `${siteConfig.name} | Enterprise Software, AI & Digital Platforms`,
   description:
-    "Zydev is an international software agency building enterprise SaaS, custom business platforms, AI automation, mobile apps, dashboards, and cloud systems that improve operations and revenue.",
+    "Zevriyon Technologies is an international software and AI engineering company building enterprise SaaS, custom business platforms, AI automation, mobile apps, dashboards, and cloud systems that improve operations and revenue.",
   path: "/",
 });
 
 
 const homeFaqs = [
   {
-    question: "What does Zydev build?",
+    question: `What does ${siteConfig.shortName} build?`,
     answer:
       "We design and deliver enterprise SaaS, custom business platforms, AI automation, mobile apps, CRM/ERP and portal systems, dashboards, APIs, and cloud foundations — with product strategy and UX when leadership needs clarity before build.",
   },
@@ -87,13 +87,13 @@ export default function HomePage() {
       <ProcessSection />
 
       <section
-        aria-labelledby="why-zydev-heading"
+        aria-labelledby="why-zevriyon-heading"
         className="section-pad bg-canvas"
       >
         <Container>
           <SectionHeading
-            id="why-zydev-heading"
-            eyebrow="Why Zydev"
+            id="why-zevriyon-heading"
+            eyebrow={`Why ${siteConfig.shortName}`}
             title="A software partner for serious operational change"
             description="We help organisations replace fragile processes and fragmented tools with platforms that leadership can trust and teams can run."
           />
@@ -185,7 +185,7 @@ export default function HomePage() {
           <SectionHeading
             id="faq-heading"
             eyebrow="FAQ"
-            title="Common questions about working with Zydev"
+            title={`Common questions about working with ${siteConfig.shortName}`}
             align="center"
           />
           <div className="mt-10">

@@ -80,36 +80,45 @@
     @apply w-full rounded-lg border border-ink/12 bg-white px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-slate/60 focus:border-coral focus:ring-2 focus:ring-coral/15;
   }
 
-  .prose-zydev {
+  .prose-zydev,
+  .prose-zevriyon {
     @apply max-w-none text-slate leading-relaxed;
   }
 
-  .prose-zydev h2 {
+  .prose-zydev h2,
+  .prose-zevriyon h2 {
     @apply mt-10 mb-4 font-display text-2xl font-semibold tracking-tight text-ink;
   }
 
-  .prose-zydev h3 {
+  .prose-zydev h3,
+  .prose-zevriyon h3 {
     @apply mt-8 mb-3 font-display text-xl font-semibold text-ink;
   }
 
-  .prose-zydev p {
+  .prose-zydev p,
+  .prose-zevriyon p {
     @apply mb-4;
   }
 
   .prose-zydev ul,
-  .prose-zydev ol {
+  .prose-zevriyon ul,
+  .prose-zydev ol,
+  .prose-zevriyon ol {
     @apply mb-4 ml-5 space-y-2;
   }
 
-  .prose-zydev ul {
+  .prose-zydev ul,
+  .prose-zevriyon ul {
     @apply list-disc;
   }
 
-  .prose-zydev ol {
+  .prose-zydev ol,
+  .prose-zevriyon ol {
     @apply list-decimal;
   }
 
-  .prose-zydev a {
+  .prose-zydev a,
+  .prose-zevriyon a {
     @apply font-semibold text-coral underline;
   }
 

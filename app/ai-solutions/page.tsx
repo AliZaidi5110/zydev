@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "AI Solutions",
   description:
-    "Zydev builds AI chatbots, assistants, voice agents, RAG systems, workflow automation, and OpenAI/Anthropic integrations with real business use cases.",
+    "Zevriyon Technologies builds AI chatbots, assistants, voice agents, RAG systems, workflow automation, and OpenAI/Anthropic integrations with real business use cases.",
   path: "/ai-solutions",
 });
 

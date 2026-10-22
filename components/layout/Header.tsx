@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -77,13 +78,28 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
         <Link
           href="/"
-          className={`font-display text-[1.65rem] font-bold tracking-tight ${
-            overlay ? "text-white" : "text-ink"
-          }`}
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-90"
           aria-label={`${siteConfig.name} home`}
         >
-          Zy
-          <span className={overlay ? "text-white/80" : "text-coral"}>dev</span>
+          {overlay ? (
+            <Image
+              src="/images/zevriyon-logo-white.svg"
+              alt={siteConfig.name}
+              width={190}
+              height={52}
+              priority
+              className="h-8 sm:h-9 w-auto object-contain"
+            />
+          ) : (
+            <Image
+              src="/images/zevriyon-logo.svg"
+              alt={siteConfig.name}
+              width={190}
+              height={52}
+              priority
+              className="h-8 sm:h-9 w-auto object-contain"
+            />
+          )}
         </Link>
 
         <nav

@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Pricing",
   description:
-    "Transparent Zydev engagement starting points for custom software, AI solutions, enterprise systems, mobile apps, cloud programmes, and product strategy.",
+    "Transparent Zevriyon Technologies engagement starting points for custom software, AI solutions, enterprise systems, mobile apps, cloud programmes, and product strategy.",
   path: "/pricing",
 });
 

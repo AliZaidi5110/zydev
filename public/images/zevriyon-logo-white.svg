@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" fill="none" role="img" aria-label="Zevriyon Technologies">
+  <defs>
+    <linearGradient id="zev-grad-cyan-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5B9" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="zev-power-grad-dark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#00E5B9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Icon Mark -->
+  <g transform="translate(14, 10)">
+    <!-- Headset Headband -->
+    <path d="M 16 52 A 38 38 0 0 1 84 52" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" />
+    
+    <!-- Left Ear Cup -->
+    <rect x="8" y="44" width="11" height="25" rx="5.5" fill="#FFFFFF" />
+    <!-- Right Ear Cup -->
+    <rect x="81" y="44" width="11" height="25" rx="5.5" fill="#FFFFFF" />
+    
+    <!-- Mic Boom -->
+    <path d="M 87 62 C 87 84 66 94 48 94" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+    <rect x="40" y="89" width="15" height="10" rx="5" fill="#FFFFFF" />
+
+    <!-- Wifi Signals -->
+    <path d="M 33 27 A 22 22 0 0 1 67 27" fill="none" stroke="url(#zev-grad-cyan-dark)" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 39 35 A 14 14 0 0 1 61 35" fill="none" stroke="url(#zev-grad-cyan-dark)" stroke-width="4.2" stroke-linecap="round" />
+    <circle cx="50" cy="42" r="3.2" fill="url(#zev-grad-cyan-dark)" />
+
+    <!-- Growth Trend Arrow -->
+    <path d="M 27 75 L 42 58 L 52 68 L 74 42" fill="none" stroke="url(#zev-power-grad-dark)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 64 42 L 76 40 L 76 52 Z" fill="#00E5B9" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(125, 0)">
+    <!-- ZEVRIYON Title -->
+    <text x="0" y="55" font-family="'Syne', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" letter-spacing="3" fill="#FFFFFF">
+      ZEVRIY
+    </text>
+    
+    <!-- Stylized Power Symbol 'O' -->
+    <g transform="translate(155, 32)">
+      <circle cx="13" cy="14" r="12" fill="none" stroke="url(#zev-power-grad-dark)" stroke-width="4.8" stroke-dasharray="62 16" stroke-dashoffset="-8" />
+      <line x1="13" y1="2" x2="13" y2="14" stroke="url(#zev-power-grad-dark)" stroke-width="4.8" stroke-linecap="round" />
+    </g>
+
+    <!-- N -->
+    <text x="187" y="55" font-family="'Syne', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" letter-spacing="3" fill="#FFFFFF">
+      N
+    </text>
+
+    <!-- TECHNOLOGIES Subtitle -->
+    <text x="2" y="80" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14.5" font-weight="700" letter-spacing="7" fill="#38BDF8">
+      TECHNOLOGIES
+    </text>
+
+    <!-- Tagline: Limitless Possibilities -->
+    <g transform="translate(0, 98)">
+      <line x1="2" y1="0" x2="52" y2="0" stroke="#00E5B9" stroke-width="1.6" stroke-linecap="round" />
+      <text x="60" y="3.5" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500" letter-spacing="1.8" fill="#CBD5E1">
+        Limitless Possibilities
+      </text>
+      <line x1="210" y1="0" x2="260" y2="0" stroke="#00E5B9" stroke-width="1.6" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

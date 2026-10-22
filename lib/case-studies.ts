@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Property and facilities managers needed a defensible way to run annual service tenders — with structured proposal comparison, contractor financial vetting, renewal tracking, and exportable audit trails aligned to the RICS Service Charge Code. Spreadsheet-led processes made compliance and decision records hard to defend.",
     solution:
-      "Zydev helped shape and deliver ServiPro as a dual-sided procurement product: managing agents create tenders, invite contractors, compare proposals, award contracts, and retain compliance history; contractors access tenders, submit structured bids, and upload compliance documents. Financial standing checks and renewal reminders support safer, more transparent awards on both sides of the tender.",
+      "Zevriyon Technologies helped shape and deliver ServiPro as a dual-sided procurement product: managing agents create tenders, invite contractors, compare proposals, award contracts, and retain compliance history; contractors access tenders, submit structured bids, and upload compliance documents. Financial standing checks and renewal reminders support safer, more transparent awards on both sides of the tender.",
     features: [
       "Tender creation and contractor invitation flows",
       "Side-by-side proposal comparison for value-for-money justification",

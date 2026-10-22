@@ -1,13 +1,14 @@
 export const siteConfig = {
-  name: "Zydev",
-  legalName: "Zydev Ltd",
-  tagline: "Enterprise software that moves the business forward",
+  name: "Zevriyon Technologies",
+  shortName: "Zevriyon",
+  legalName: "Zevriyon Technologies Ltd",
+  tagline: "Limitless Possibilities — Enterprise Software & AI Systems",
   description:
-    "Zydev is an international software agency building enterprise SaaS, custom business platforms, AI automation, mobile apps, dashboards, and cloud systems that improve operations, revenue, and decision-making.",
-  url: "https://www.zydev.co.uk",
+    "Zevriyon Technologies is an international software and AI engineering company building enterprise SaaS, custom platforms, AI automation, mobile apps, dashboards, and cloud systems that drive operational growth.",
+  url: "https://www.zevriyon.com",
   locale: "en_GB",
   phone: "+44 20 0000 0000",
-  email: "hello@zydev.co.uk",
+  email: "hello@zevriyon.com",
   address: {
     streetAddress: "1 Digital Way",
     addressLocality: "London",
@@ -16,9 +17,9 @@ export const siteConfig = {
   },
   areaServed: "Worldwide",
   social: {
-    facebook: "https://www.facebook.com/zydev",
-    instagram: "https://www.instagram.com/zydev",
-    linkedin: "https://www.linkedin.com/company/zydev",
+    facebook: "https://www.facebook.com/zevriyon",
+    instagram: "https://www.instagram.com/zevriyon",
+    linkedin: "https://www.linkedin.com/company/zevriyon",
   },
   cta: {
     primary: "Start a project",

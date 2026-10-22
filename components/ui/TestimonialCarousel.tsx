@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "Zydev brought clarity to a messy digital estate. The process was structured, the communication was sharp, and delivery stayed aligned to commercial priorities.",
+      "Zevriyon Technologies brought clarity to a messy digital estate. The process was structured, the communication was sharp, and delivery stayed aligned to commercial priorities.",
     name: "Priya Shah",
     role: "Director, Northside Dental",
   },

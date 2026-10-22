@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Case Studies",
   description:
-    "Real Zydev case studies: ServiPro, Loft Aesthetics, Eva Hair, and UCBS — live product and platform work with problem, solution, features, and technologies.",
+    "Real Zevriyon Technologies case studies: ServiPro, Loft Aesthetics, Eva Hair, and UCBS — live product and platform work with problem, solution, features, and technologies.",
   path: "/case-studies",
 });
 

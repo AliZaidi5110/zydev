@@ -31,11 +31,11 @@ export const services: Service[] = [
     title: "Custom Software & Enterprise SaaS",
     shortTitle: "Custom Software",
     primaryKeyword: "custom enterprise software development",
-    metaTitle: "Custom Software & Enterprise SaaS | Zydev",
+    metaTitle: "Custom Software & Enterprise SaaS | Zevriyon Technologies",
     metaDescription:
-      "Zydev designs and builds enterprise SaaS and custom business platforms — from marketplaces and booking systems to industry-specific software that improves revenue and operations.",
+      "Zevriyon Technologies designs and builds enterprise SaaS and custom business platforms — from marketplaces and booking systems to industry-specific software that improves revenue and operations.",
     intro:
-      "When off-the-shelf tools create workarounds, revenue leaks, or operational risk, Zydev builds software around your business model. We deliver enterprise SaaS products and custom platforms that teams actually adopt — with clear ownership, measurable outcomes, and room to scale.",
+      "When off-the-shelf tools create workarounds, revenue leaks, or operational risk, Zevriyon builds software around your business model. We deliver enterprise SaaS products and custom platforms that teams actually adopt — with clear ownership, measurable outcomes, and room to scale.",
     summary:
       "SaaS products and custom platforms engineered for growth, reliability, and adoption.",
     icon: "platform",
@@ -140,11 +140,11 @@ export const services: Service[] = [
     title: "AI Solutions & Automation",
     shortTitle: "AI Solutions",
     primaryKeyword: "AI automation for enterprise",
-    metaTitle: "AI Agents, Chatbots & Automation | Zydev",
+    metaTitle: "AI Agents, Chatbots & Automation | Zevriyon Technologies",
     metaDescription:
-      "Zydev builds AI chatbots, assistants, voice agents, workflow automation, and knowledge systems that cut cost-to-serve and accelerate decisions.",
+      "Zevriyon Technologies builds AI chatbots, assistants, voice agents, workflow automation, and knowledge systems that cut cost-to-serve and accelerate decisions.",
     intro:
-      "AI only creates value when it removes real operational load. Zydev designs assistants, chatbots, voice agents, and workflow automation that plug into your data and processes — so support, sales, and operations move faster with fewer handoffs.",
+      "AI only creates value when it removes real operational load. Zevriyon designs assistants, chatbots, voice agents, and workflow automation that plug into your data and processes — so support, sales, and operations move faster with fewer handoffs.",
     summary:
       "Practical AI systems that reduce manual work and improve customer response.",
     icon: "ai",
@@ -249,11 +249,11 @@ export const services: Service[] = [
     title: "CRM, ERP, Portals & Dashboards",
     shortTitle: "Enterprise Systems",
     primaryKeyword: "custom CRM ERP dashboards",
-    metaTitle: "CRM, ERP, Portals & Dashboards | Zydev",
+    metaTitle: "CRM, ERP, Portals & Dashboards | Zevriyon Technologies",
     metaDescription:
-      "Zydev builds CRM and ERP workflows, admin panels, customer and vendor portals, and executive dashboards that improve visibility and control.",
+      "Zevriyon Technologies builds CRM and ERP workflows, admin panels, customer and vendor portals, and executive dashboards that improve visibility and control.",
     intro:
-      "Spreadsheets and bolted-on tools eventually break under growth. Zydev designs enterprise systems — CRM and ERP workflows, admin panels, customer portals, vendor portals, and dashboards — so leadership sees reality and teams execute with less friction.",
+      "Spreadsheets and bolted-on tools eventually break under growth. Zevriyon designs enterprise systems — CRM and ERP workflows, admin panels, customer portals, vendor portals, and dashboards — so leadership sees reality and teams execute with less friction.",
     summary:
       "Operational systems and portals that give teams control and leadership clarity.",
     icon: "systems",
@@ -358,11 +358,11 @@ export const services: Service[] = [
     title: "Mobile Applications",
     shortTitle: "Mobile Apps",
     primaryKeyword: "enterprise mobile app development",
-    metaTitle: "Enterprise Mobile App Development | Zydev",
+    metaTitle: "Enterprise Mobile App Development | Zevriyon Technologies",
     metaDescription:
-      "Zydev builds customer and workforce mobile apps that improve engagement, field operations, and revenue — with reliability and clear product ownership.",
+      "Zevriyon Technologies builds customer and workforce mobile apps that improve engagement, field operations, and revenue — with reliability and clear product ownership.",
     intro:
-      "Mobile is often where customers buy and field teams deliver. Zydev designs and builds mobile applications that stay fast, secure, and maintainable — whether you need a customer product, booking experience, or internal operations app.",
+      "Mobile is often where customers buy and field teams deliver. Zevriyon designs and builds mobile applications that stay fast, secure, and maintainable — whether you need a customer product, booking experience, or internal operations app.",
     summary:
       "Customer and workforce apps designed for reliability and long-term ownership.",
     icon: "mobile",
@@ -467,11 +467,11 @@ export const services: Service[] = [
     title: "APIs, Cloud Solutions & DevOps",
     shortTitle: "Cloud & DevOps",
     primaryKeyword: "cloud API DevOps consulting",
-    metaTitle: "Cloud Solutions, APIs & DevOps | Zydev",
+    metaTitle: "Cloud Solutions, APIs & DevOps | Zevriyon Technologies",
     metaDescription:
-      "Zydev designs APIs, cloud architecture, and DevOps pipelines that improve reliability, security, and delivery speed for software products.",
+      "Zevriyon Technologies designs APIs, cloud architecture, and DevOps pipelines that improve reliability, security, and delivery speed for software products.",
     intro:
-      "Great products fail when infrastructure and delivery are fragile. Zydev builds APIs, cloud foundations, and DevOps practices that keep releases predictable, environments secure, and systems observable as you scale.",
+      "Great products fail when infrastructure and delivery are fragile. Zevriyon builds APIs, cloud foundations, and DevOps practices that keep releases predictable, environments secure, and systems observable as you scale.",
     summary:
       "Reliable cloud foundations, APIs, and delivery pipelines for serious products.",
     icon: "cloud",
@@ -576,11 +576,11 @@ export const services: Service[] = [
     title: "Product Strategy, UI/UX & Digital Transformation",
     shortTitle: "Product Strategy",
     primaryKeyword: "digital transformation product strategy",
-    metaTitle: "Product Strategy, UI/UX & Transformation | Zydev",
+    metaTitle: "Product Strategy, UI/UX & Transformation | Zevriyon Technologies",
     metaDescription:
-      "Zydev helps leadership teams define product strategy, UX, and digital transformation programmes that turn ambition into shippable software.",
+      "Zevriyon Technologies helps leadership teams define product strategy, UX, and digital transformation programmes that turn ambition into shippable software.",
     intro:
-      "Technology programmes fail when strategy, experience, and delivery stay disconnected. Zydev helps organisations decide what to build, design experiences people can use, and run transformation in phases that protect operations while creating momentum.",
+      "Technology programmes fail when strategy, experience, and delivery stay disconnected. Zevriyon helps organisations decide what to build, design experiences people can use, and run transformation in phases that protect operations while creating momentum.",
     summary:
       "Strategy and UX that turn digital ambition into shippable, adopted products.",
     icon: "strategy",
@@ -665,7 +665,7 @@ export const services: Service[] = [
       {
         question: "Can you run strategy without also building the product?",
         answer:
-          "Yes. Many clients engage us for strategy and UX first, then choose in-house or Zydev delivery for build.",
+          "Yes. Many clients engage us for strategy and UX first, then choose in-house or Zevriyon delivery for build.",
       },
       {
         question: "How do you handle resistance to change?",

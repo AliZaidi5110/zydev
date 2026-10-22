@@ -64,7 +64,7 @@ export async function POST(request: Request) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...parsed.data,
-          source: "zydev-website",
+          source: "zevriyon-website",
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from:
             process.env.CONTACT_FROM_EMAIL ??
-            "Zydev Website <onboarding@resend.dev>",
+            "Zevriyon Website <onboarding@resend.dev>",
           to: [toEmail],
           subject: `New enquiry from ${parsed.data.name}`,
           text: [

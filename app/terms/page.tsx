@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
 export default function TermsPage() {
   return (
     <section className="py-16 sm:py-20">
-      <Container className="prose-zydev max-w-3xl">
+      <Container className="prose-zevriyon max-w-3xl">
         <h1 className="font-display text-4xl font-semibold tracking-tight text-ink">
           Terms of Service
         </h1>
@@ -19,7 +19,7 @@ export default function TermsPage() {
 
         <h2>Website use</h2>
         <p>
-          By using www.zydev.co.uk you agree to these terms. Content is provided
+          By using this website you agree to these terms. Content is provided
           for general information and may change without notice.
         </p>
 
@@ -32,10 +32,10 @@ export default function TermsPage() {
 
         <h2>Intellectual property</h2>
         <p>
-          Until invoices are paid in full (unless otherwise agreed), Zydev
+          Until invoices are paid in full (unless otherwise agreed), {siteConfig.name}
           retains rights in work product. Upon payment, agreed deliverables
           transfer as specified in the statement of work. Pre-existing tools and
-          frameworks remain Zydev’s or their respective owners’.
+          frameworks remain {siteConfig.name}’s or their respective owners’.
         </p>
 
         <h2>Client responsibilities</h2>
@@ -46,7 +46,7 @@ export default function TermsPage() {
 
         <h2>Liability</h2>
         <p>
-          To the fullest extent permitted by law, Zydev is not liable for
+          To the fullest extent permitted by law, {siteConfig.name} is not liable for
           indirect or consequential losses. Nothing in these terms limits
           liability that cannot be limited under UK law.
         </p>

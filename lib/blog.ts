@@ -45,7 +45,7 @@ export function getPostBySlug(slug: string): BlogPost {
     description: String(data.description ?? ""),
     publishedAt: String(data.publishedAt ?? new Date().toISOString()),
     updatedAt: data.updatedAt ? String(data.updatedAt) : undefined,
-    author: String(data.author ?? "Zydev Team"),
+    author: String(data.author ?? "Zevriyon Team"),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     readingMinutes: Math.max(1, Math.ceil(stats.minutes)),
     content,

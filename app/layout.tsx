@@ -41,7 +41,8 @@ export const metadata: Metadata = {
     "mobile app development",
     "cloud DevOps",
     "digital transformation",
-    "Zydev",
+    "Zevriyon",
+    "Zevriyon Technologies",
   ],
 };
 

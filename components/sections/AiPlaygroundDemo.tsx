@@ -72,7 +72,7 @@ export function AiPlaygroundDemo() {
             Interactive AI Playground
           </span>
           <h3 className="font-display text-xl font-bold text-white mt-1">
-            See Zydev AI Agents in Action
+            See Zevriyon AI Agents in Action
           </h3>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -109,7 +109,7 @@ export function AiPlaygroundDemo() {
 
           <div className="space-y-4">
             <div>
-              <span className="text-teal-soft font-semibold">user@zydev-agent ~$</span>
+              <span className="text-teal-soft font-semibold">user@zevriyon-agent ~$</span>
               <p className="mt-1 text-white/80 bg-white/5 p-2.5 rounded border border-white/5">
                 "{scenario.prompt}"
               </p>

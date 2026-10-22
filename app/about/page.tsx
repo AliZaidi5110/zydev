@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "About Zydev",
+  title: `About ${siteConfig.name}`,
   description:
-    "Zydev is an international software agency helping organisations ship enterprise SaaS, AI automation, mobile apps, and business platforms with clarity and commercial discipline.",
+    "Zevriyon Technologies is an international software and AI company helping organisations ship enterprise SaaS, AI automation, mobile apps, and business platforms with clarity and commercial discipline.",
   path: "/about",
 });
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
               An international software agency for operational advantage
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate sm:text-xl">
-              Zydev helps organisations replace fragile processes and fragmented
+              {siteConfig.name} helps organisations replace fragile processes and fragmented
               tools with enterprise software — SaaS products, custom platforms,
               AI automation, mobile apps, portals, and cloud systems designed
               for adoption and long-term ownership.
@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div>
             <SectionHeading
               title="Why we exist"
-              description="Too many digital programmes produce slides, prototypes, or short-lived MVPs that never become reliable operating systems. We built Zydev to close the gap between ambition and software that teams can run."
+              description={`Too many digital programmes produce slides, prototypes, or short-lived MVPs that never become reliable operating systems. We built ${siteConfig.name} to close the gap between ambition and software that teams can run.`}
             />
             <p className="mt-6 text-base leading-relaxed text-slate">
               From discovery through launch, we focus on the fundamentals that
@@ -69,7 +69,7 @@ export default function AboutPage() {
               team can rely on every day.”
             </p>
             <p className="mt-6 text-sm text-white/50">
-              The Zydev operating principle
+              The {siteConfig.shortName} operating principle
             </p>
           </div>
         </Container>
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
       <CtaBanner
         title="Exploring a platform or AI programme?"
-        description="Start a project conversation and we’ll talk honestly about scope, sequencing, and whether Zydev is the right partner."
+        description={`Start a project conversation and we’ll talk honestly about scope, sequencing, and whether ${siteConfig.shortName} is the right partner.`}
       />
     </>
   );

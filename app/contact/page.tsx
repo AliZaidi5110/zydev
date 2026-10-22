@@ -5,9 +5,9 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Contact Zydev",
+  title: `Contact ${siteConfig.name}`,
   description:
-    "Start a project or book a discovery call with Zydev. Tell us about your SaaS, platform, AI, mobile, or transformation goals.",
+    "Start a project or book a discovery call with Zevriyon Technologies. Tell us about your SaaS, platform, AI, mobile, or transformation goals.",
   path: "/contact",
 });
 

@@ -11,8 +11,8 @@ export function RotatingStudioBadge({
   href = "#services",
 }: RotatingStudioBadgeProps) {
   const id = useId().replace(/:/g, "");
-  const pathId = `zydev-circle-${id}`;
-  const label = "ZYDEV STUDIO — ZYDEV STUDIO — ZYDEV STUDIO — ";
+  const pathId = `zevriyon-circle-${id}`;
+  const label = "ZEVRIYON TECHNOLOGIES — LIMITLESS POSSIBILITIES — ";
 
   return (
     <Link

@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Blog",
   description:
-    "Notes on software delivery, AI adoption, product strategy, and digital transformation — from the Zydev team.",
+    "Notes on software delivery, AI adoption, product strategy, and digital transformation — from the Zevriyon Technologies team.",
   path: "/blog",
 });
 

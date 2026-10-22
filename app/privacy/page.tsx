@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
 export default function PrivacyPage() {
   return (
     <section className="py-16 sm:py-20">
-      <Container className="prose-zydev max-w-3xl">
+      <Container className="prose-zevriyon max-w-3xl">
         <h1 className="font-display text-4xl font-semibold tracking-tight text-ink">
           Privacy Policy
         </h1>
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
         <h2>Who we are</h2>
         <p>
-          {siteConfig.legalName} (“Zydev”, “we”, “us”) provides software design,
+          {siteConfig.legalName} (“{siteConfig.shortName}”, “we”, “us”) provides software design,
           engineering, and digital transformation services to organisations
           worldwide. Contact:{" "}
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.

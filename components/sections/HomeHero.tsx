@@ -25,7 +25,7 @@ export function HomeHero() {
       <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-7xl flex-col px-5 pb-10 pt-28 sm:px-8 sm:pb-14 sm:pt-32 lg:px-12">
         <FadeIn className="flex flex-1 flex-col justify-center">
           <h1 className="hero-studio-title font-display text-[clamp(2.4rem,9vw,7.5rem)] font-bold uppercase leading-none tracking-[-0.04em] sm:whitespace-nowrap">
-            Zydev.Studio
+            Zevriyon
           </h1>
         </FadeIn>
 

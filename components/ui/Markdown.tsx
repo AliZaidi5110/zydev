@@ -85,7 +85,7 @@ export function markdownToHtml(markdown: string) {
 export function Markdown({ content }: { content: string }) {
   return (
     <div
-      className="prose-zydev"
+      className="prose-zevriyon"
       dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }}
     />
   );

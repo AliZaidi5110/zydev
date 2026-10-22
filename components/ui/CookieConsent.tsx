@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
-const STORAGE_KEY = "zydev-cookie-consent";
+const STORAGE_KEY = "zevriyon-cookie-consent";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -26,7 +26,7 @@ export function CookieConsent() {
     }
     setVisible(false);
     window.dispatchEvent(
-      new CustomEvent("zydev-consent", { detail: { value } }),
+      new CustomEvent("zevriyon-consent", { detail: { value } }),
     );
   }
 

@@ -9,7 +9,7 @@ import { services } from "@/lib/services";
 export const metadata = buildMetadata({
   title: "Software Services for Enterprise Teams",
   description:
-    "Explore Zydev services: custom SaaS and platforms, AI solutions, enterprise systems, mobile apps, cloud and DevOps, and product strategy.",
+    "Explore Zevriyon Technologies services: custom SaaS and platforms, AI solutions, enterprise systems, mobile apps, cloud and DevOps, and product strategy.",
   path: "/services",
 });
 

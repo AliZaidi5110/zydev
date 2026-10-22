@@ -1,6 +1,6 @@
-# Zydev
+# Zevriyon Technologies
 
-Production-ready Next.js website for **Zydev**, an international software agency building enterprise SaaS, custom platforms, AI automation, mobile apps, and cloud systems.
+Production-ready Next.js website for **Zevriyon Technologies**, an international software agency building enterprise SaaS, custom platforms, AI automation, mobile apps, and cloud systems.
 
 ## Stack
 
@@ -36,4 +36,4 @@ Without either, submissions still succeed in development and are logged to the c
 
 ## Deploy
 
-Deploy to Vercel, set the env vars above, and point the production domain to `https://www.zydev.co.uk` (update `lib/site.ts` if your domain differs).
+Deploy to Vercel, set the env vars above, and point the production domain to `https://www.zevriyon.com` (update `lib/site.ts` if your domain differs).

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#0E1C2F" />
+  <g transform="translate(4, 3) scale(0.24)">
+    <defs>
+      <linearGradient id="favicon-grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00E5B9" />
+        <stop offset="100%" stop-color="#38BDF8" />
+      </linearGradient>
+      <linearGradient id="favicon-grad-arrow" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#38BDF8" />
+        <stop offset="100%" stop-color="#00E5B9" />
+      </linearGradient>
+    </defs>
+    <!-- Headset Headband -->
+    <path d="M 16 52 A 38 38 0 0 1 84 52" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" />
+    <rect x="8" y="44" width="12" height="26" rx="6" fill="#FFFFFF" />
+    <rect x="80" y="44" width="12" height="26" rx="6" fill="#FFFFFF" />
+    <path d="M 86 62 C 86 85 66 95 48 95" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+    <rect x="40" y="90" width="16" height="10" rx="5" fill="#FFFFFF" />
+    <path d="M 33 27 A 22 22 0 0 1 67 27" fill="none" stroke="url(#favicon-grad-cyan)" stroke-width="6" stroke-linecap="round" />
+    <path d="M 39 35 A 14 14 0 0 1 61 35" fill="none" stroke="url(#favicon-grad-cyan)" stroke-width="5" stroke-linecap="round" />
+    <circle cx="50" cy="42" r="4" fill="url(#favicon-grad-cyan)" />
+    <path d="M 27 75 L 42 58 L 52 68 L 74 42" fill="none" stroke="url(#favicon-grad-arrow)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 62 42 L 76 40 L 76 54 Z" fill="#00E5B9" />
+  </g>
+</svg>

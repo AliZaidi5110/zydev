@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "zydev-cookie-consent";
+const STORAGE_KEY = "zevriyon-cookie-consent";
 
 export function AnalyticsGate() {
   const [enabled, setEnabled] = useState(false);
@@ -20,9 +20,9 @@ export function AnalyticsGate() {
 
     sync();
     const onConsent = () => sync();
-    window.addEventListener("zydev-consent", onConsent as EventListener);
+    window.addEventListener("zevriyon-consent", onConsent as EventListener);
     return () =>
-      window.removeEventListener("zydev-consent", onConsent as EventListener);
+      window.removeEventListener("zevriyon-consent", onConsent as EventListener);
   }, []);
 
   if (!enabled) return null;
