@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { DesignShowcase } from "@/components/sections/DesignShowcase";
 import { ServicesShowcase } from "@/components/sections/ServicesShowcase";
+import { PosShowcaseSection } from "@/components/sections/PosShowcaseSection";
 import { EngineeringExpertise } from "@/components/sections/EngineeringExpertise";
 import { AiSolutionsSection } from "@/components/sections/AiSolutionsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -84,6 +85,8 @@ export default function HomePage() {
       <DesignShowcase />
 
       <ServicesShowcase />
+
+      <PosShowcaseSection />
 
       <AiSolutionsSection compact />
 

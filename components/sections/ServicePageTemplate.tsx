@@ -8,6 +8,7 @@ import {
   ServiceSchema,
 } from "@/components/seo/JsonLd";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { PosShowcaseSection } from "@/components/sections/PosShowcaseSection";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -98,6 +99,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
           </div>
         </Container>
       </section>
+
+      {service.slug === "telemarketing-pos" ? <PosShowcaseSection /> : null}
 
       <section className="section-pad">
         <Container>
