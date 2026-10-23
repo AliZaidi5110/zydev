@@ -83,21 +83,21 @@ export function Header() {
         >
           {overlay ? (
             <Image
-              src="/images/zevriyon-logo-white.svg"
+              src="/images/zevriyon-logo-horizontal-white.png"
               alt={siteConfig.name}
-              width={190}
-              height={52}
+              width={210}
+              height={60}
               priority
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-9 sm:h-10 w-auto object-contain"
             />
           ) : (
             <Image
-              src="/images/zevriyon-logo.svg"
+              src="/images/zevriyon-logo-horizontal.png"
               alt={siteConfig.name}
-              width={190}
-              height={52}
+              width={210}
+              height={60}
               priority
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-9 sm:h-10 w-auto object-contain"
             />
           )}
         </Link>

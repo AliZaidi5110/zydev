@@ -16,11 +16,11 @@ export function Footer() {
               className="inline-block transition-opacity hover:opacity-90"
             >
               <Image
-                src="/images/zevriyon-logo-white.svg"
+                src="/images/zevriyon-logo-horizontal-white.png"
                 alt={siteConfig.name}
-                width={210}
-                height={58}
-                className="h-9 sm:h-10 w-auto object-contain"
+                width={220}
+                height={62}
+                className="h-10 sm:h-11 w-auto object-contain"
               />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
